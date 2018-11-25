@@ -1,0 +1,44 @@
+body  {
+  background-color: #849d8f;
+  width: 100%;
+}
+main h1.hidden  {
+  display: none;
+}
+header .main-nav  {
+  display: flex;
+}
+
+.main-nav .nav-list  {
+  display: flex;
+}
+.nav-list .nav-item {
+  display: inline-block;
+
+  padding: 5px; /*временное решение*/
+/*
+  width: 349px;
+  height: 15px;
+*/
+}
+.nav-item a  {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.13;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+}
+.main-nav .user-block  {
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.main-nav .info-mini  {
+
+}
+.info-mini p  {
+  text-align: right;
+}
