@@ -7,20 +7,22 @@
   </head>
   <body>
     <main class="main-login">
-      <form class="login-form">
+      <form class="login-form" method="post" action="https://echo.htmlacademy.ru">
         <p>
-          <input type="email" name="login" placeholder="Электронная почта">
+          <label for="user-login" class="visually-hidden">Логин</label>
+          <input type="email" id="user-login" name="login" placeholder="Электронная почта">
         </p>
         <p>
-          <input type="password" name="password" placeholder="Пароль">
+          <label for="password" class="visually-hidden">Пароль</label>
+          <input type="password" id="password" name="password" placeholder="Пароль">
         </p>
         <div class="container-reg">
-          <button class="button login">Войти</button>
-          <ul>
-            <li>
+          <button class="button login" type="submit">Войти</button>
+          <ul class="reg-list">
+            <li class="reg-item">
               <a href="#">Забыли пароль?</a>
             </li>
-            <li>
+            <li class="reg-item">
               <a href="#">Новая регистрация</a>
             </li>
           </ul>

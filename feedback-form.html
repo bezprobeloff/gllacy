@@ -11,18 +11,21 @@
       <button class="button-close">
         <img src="img/cross-big-icon.svg" alt="Кнопка закрытия формы">
       </button>
-      <form class="feedback-form">
+      <form class="feedback-form" method="post" action="https://echo.htmlacademy.ru">
         <p>
-          <input type="text" name="user-name" placeholder="Как вас зовут?" required>
+          <label for="user-name" class="visually-hidden">Ваше имя</label>
+          <input type="text" id="user-name" name="user-name" placeholder="Как вас зовут?" required>
         </p>
         <p>
-          <input type="email" name="email-feedback" placeholder="Ваша почта для ответа?" required>
+          <label for="email-feedback" class="visually-hidden">Ваш email</label>
+          <input type="email" id="email-feedback" name="email-feedback" placeholder="Ваша почта для ответа?" required>
         </p>
         <p>
-          <textarea class="text-feedback" name="text-feedback" rows="10" placeholder="Напишите что-нибудь..." required></textarea>
+          <label for="text-feedback" class="visually-hidden">Текст для обратной связи</label>
+          <textarea class="text-feedback" id="text-feedback" name="text-feedback" rows="10" placeholder="Напишите что-нибудь..." required></textarea>
         </p>
         <div class="container-reg">
-        <input type="submit" name="submit-feedback" value="Отправить">
+        <input type="submit" class="button" name="submit-feedback" value="Отправить">
       </form>
     </main>
   </body>
