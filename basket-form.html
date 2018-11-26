@@ -8,12 +8,34 @@
   <body>
     <main class="main-basket">
       <form class="basket-form">
-        <p>
-          <input type="email" name="login" placeholder="Электронная почта">
-        </p>
-        <p>
-          <input type="password" name="password" placeholder="Пароль">
-        </p>
+        <div class="basket">
+          <ul class="basket-row">
+            <li class="basket-cell delete">
+              <button class="button-delete" type="button">
+                <img src="img/cross-small-icon.svg" alt="Кнопка удаления товара из корзины">
+              </button>
+            </li>
+            <li class="basket-cell">
+              <img src="#" alt="Превью товара">
+            </li>
+            <li class="basket-cell">
+              <p>Пломбир с апельсиновым джемом</p>
+            </li>
+            <li class="basket-cell">
+              <p>1,5 кг х</p>
+            </li>
+            <li class="basket-cell">
+              <p>200 руб.</p>
+            </li>
+            <li class="basket-cell">
+              <p>300 руб.</p>
+            </li>
+          </ul>
+        </div>
+        <div class="total" method="post" action="https://echo.htmlacademy.ru">
+          <p>Итого:</p>
+          <p>750 руб.</p>
+        </div>
         <button class="button">Оформить заказ</button>
       </form>
     </main>
