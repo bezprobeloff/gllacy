@@ -1,6 +1,9 @@
-body  {
+body {
   background-color: #849d8f;
   width: 100%;
+}
+.visually-hidden {
+  display: none;
 }
 main h1.hidden  {
   display: none;

@@ -40,9 +40,71 @@
           </li>
         </ul>
         <div class="user-block">
-          <a href="search-form.html" class="search">Поиск</a>
-          <a href="login-form.html" class="user-login">Вход</a>
-          <a href="basket-form.html" class="basket">Пусто</a>
+          <ul class="user-block">
+            <li class="user-item serach">Поиск
+              <form class="search-form visually-hidden">
+                <p>
+                  <input type="search" name="search-text" placeholder="Что ищем?" autofocus>
+                </p>
+              </form>
+            </li>
+            <li class="user-item login">Вход
+              <form class="login-form visually-hidden" method="post" action="https://echo.htmlacademy.ru">
+                <p>
+                  <label for="user-login" class="visually-hidden">Логин</label>
+                  <input type="email" id="user-login" name="login" placeholder="Электронная почта" autofocus>
+                </p>
+                <p>
+                  <label for="password" class="visually-hidden">Пароль</label>
+                  <input type="password" id="password" name="password" placeholder="Пароль">
+                </p>
+                <div class="container-reg">
+                  <button class="button login" type="submit">Войти</button>
+                  <ul class="reg-list">
+                    <li class="reg-item">
+                      <a href="#">Забыли пароль?</a>
+                    </li>
+                    <li class="reg-item">
+                      <a href="#">Новая регистрация</a>
+                    </li>
+                  </ul>
+                </div>
+              </form>
+            </li>
+            <li class="user-item basket">Пусто
+              <form class="basket-form visually-hidden">
+                <div class="basket">
+                  <ul class="basket-row">
+                    <li class="basket-cell delete">
+                      <button class="button-delete" type="button">
+                        <img src="img/cross-small-icon.svg" alt="Кнопка удаления товара из корзины">
+                      </button>
+                    </li>
+                    <li class="basket-cell">
+                      <img src="#" alt="Превью товара">
+                    </li>
+                    <li class="basket-cell">
+                      <p>Пломбир с апельсиновым джемом</p>
+                    </li>
+                    <li class="basket-cell">
+                      <p>1,5 кг х</p>
+                    </li>
+                    <li class="basket-cell">
+                      <p>200 руб.</p>
+                    </li>
+                      <li class="basket-cell">
+                        <p>300 руб.</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="total" method="post" action="https://echo.htmlacademy.ru">
+                  <p>Итого:</p>
+                  <p>750 руб.</p>
+                </div>
+                <button class="button">Оформить заказ</button>
+              </form>
+            </li>
+          </ul>
         </div>
         <section class="info-mini">
           <p class="work-time">С 10 до 20, ежедневно</p>
@@ -52,11 +114,17 @@
     </header>
     <main class="main">
       <h1 class="hidden">Интернет-магазин продажи мороженого "Глейси"</h1>
-      <!-- Оставлено на следующие разделы обучения
-      <div class=""></div>
-      <div class=""></div>
-      <div class=""></div>
-      -->
+      <ul class="slide-switches">
+        <li class="slide-radio">
+          <button class="slide-btn">Первый слайд</button>
+        </li>
+        <li class="slide-radio">
+            <button class="slide-btn">Второй слайд</button>
+        </li>
+        <li class="slide-radio">
+            <button class="slide-btn">Третий слайд</button>
+        </li>
+      </ul>
       <section class="features">
         <h2 class="features-subject">Магазин Глэйси — это онлайн- и офлайн-магазин по продаже мороженого собственного производства на развес</h2>
         <ul class="feature-list">
