@@ -1,7 +1,42 @@
 body {
+  width: 1200px;
   background-color: #849d8f;
-  width: 100%;
 }
+
+.visually-hidden {
+  display: none;
+}
+header {
+
+}
+header .main-nav {
+  display: flex;
+}
+.main-nav .nav-list {
+  display: flex;
+}
+
+
+.nav-item:first-child .nav-catalog-list,
+.user-item:first-child .search-form,
+.user-item:nth-child(2) .user-login,
+.user-item:nth-child(3) .basket-form {
+  display: none;
+}
+.nav-item:first-child:hover .nav-catalog-list,
+.user-item:first-child:hover .search-form,
+.user-item:nth-child(2):hover .user-login,
+.user-item:nth-child(3):hover .basket-form {
+  display: block;
+}
+
+.main-nav .user-block {
+  align-items: flex-end;
+}
+.user-block .user-block-list {
+  display: flex;
+}
+
 @font-face {
   font-family: 'robotoregular';
   src: url('roboto-regular-webfont.woff2') format('woff2');
@@ -19,48 +54,4 @@ body {
   src: url('roboto-medium-webfont.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
-}
-
-.visually-hidden {
-  display: none;
-}
-main h1.hidden  {
-  display: none;
-}
-header .main-nav  {
-  display: flex;
-}
-
-.main-nav .nav-list  {
-  display: flex;
-}
-.nav-list .nav-item {
-  display: inline-block;
-
-  padding: 5px; /*временное решение*/
-/*
-  width: 349px;
-  height: 15px;
-*/
-}
-.nav-item a  {
-  font-family: Roboto;
-  font-size: 16px;
-  font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.13;
-  letter-spacing: normal;
-  text-align: left;
-  color: #ffffff;
-}
-.main-nav .user-block  {
-  flex-direction: row;
-  justify-content: flex-end;
-}
-.main-nav .info-mini  {
-
-}
-.info-mini p  {
-  text-align: right;
 }
