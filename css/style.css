@@ -11,6 +11,12 @@ body {
   display: none;
 }
 
+/*
+Подгружаем иконки
+*/
+.twitter  {
+  background-image: url("img/twitter-icon.svg");
+}
 
 /*
 Скрываем всплывающие блоки
@@ -34,23 +40,21 @@ header {
   border: 1px solid black;
 }
 header .main-nav {
-  display: flex;
+
 }
 .main-nav .nav-list {
-  display: flex;
+
 }
 
 .main-nav .user-block {
-  justify-self: flex-end;
+
 }
 .user-block .user-block-list {
-  display: flex;
-  justify-self: flex-end;
+
 
 }
 .info-mini {
-  display: flex;
-  justify-content: flex-end;
+
 }
 
 @font-face {
@@ -130,7 +134,7 @@ p.subscribe-text {
   color: #323232;
 }
 section.map-address {
-
+  border: 1px solid blue;
 }
 .map-addres img {
 
@@ -165,5 +169,31 @@ footer {
  {
   font-family: 'robotoregular';
   font-size: 12px;
+  color: #ffffff;
+}
+.nav-site-item a  {
+  font-family: 'robotoregular';
+  font-size: 14px;
+  color: #ffffff;
+}
+
+h2.main-title {
+  font-family: 'robotobold';
+  font-size: 35px;
+  color: #ffffff;
+}
+.ice-item a {
+  font-family: 'robotomedium';
+  font-size: 16px;
+  color: #ffffff;
+}
+.ice-item p.price {
+  font-family: 'robotobold';
+  font-size: 45px;
+  color: #ffffff;
+}
+.ice-item span.unit {
+  font-family: 'robotobold';
+  font-size: 30px;
   color: #ffffff;
 }

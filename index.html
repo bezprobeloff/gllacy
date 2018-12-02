@@ -7,10 +7,10 @@
   </head>
 <body>
 <header class="header">
+  <a href="" class="header-logo">
+    <img src="img/logo.svg" alt="Логотип Глейси">
+  </a>
   <nav class="main-nav">
-    <a href="" class="header-logo">
-      <img src="img/logo.svg" alt="Логотип Глейси">
-    </a>
     <ul class="nav-list">
       <li class="nav-item"><a href="catalog.html">Каталог</a>
         <ul class="nav-catalog-list">
@@ -24,59 +24,57 @@
       <li class="nav-item"><a href="#">Доставка и оплата</a></li>
       <li class="nav-item"><a href="#">О Компании</a></li>
     </ul>
-    <div class="user-block">
-      <ul class="user-block-list">
-        <li class="user-item">Поиск
-          <form class="search-form" action="https://echo.htmlacademy.ru" method="post">
-            <p>
-              <label class="visually-hidden" for="search-text">Поиск</label>
-              <input type="search" name="search-text" id="" placeholder="Что ищем?">
-            </p>
-          </form>
-        </li>
-        <li class="user-item">Вход
-          <form class="user-login" action="https://echo.htmlacademy.ru" method="post">
-            <p>
-              <label class="visually-hidden" for="user-login">Логин</label>
-              <input type="email" name="login" id="user-login" placeholder="Электронная почта" autofocus>
-            </p>
-            <p>
-              <label class="visually-hidden" for="password">Пароль</label>
-              <input type="password" name="password" id="password" placeholder="Пароль">
-            </p>
-            <div class="container-reg">
-              <button class="button" type="submit">Войти</button>
-              <ul class="reg-list">
-                <li class="reg-item"><a href="#">Забыли пароль?</a></li>
-                <li class="reg-item"><a href="#">Новая регистрация</a></li>
-              </ul>
-            </div>
-          </form>
-        </li>
-        <li class="user-item">Пусто
-          <form class="basket-form" action="https://echo.htmlacademy.ru" method="get">
-            <div class="basket">
-              <ul class="basket-row">
-                <li class="basket-cell">
-                  <button class="button" type="button"><img src="img/cross-small-icon.svg" alt="Кнопка удаление товара" srcset=""></button>
-                </li>
-                <li class="basket-cell"><img src="#" alt="Превью товара"></li>
-                <li class="basket-cell"><p>Пломбир с апельсиновым джемом</p></li>
-                <li class="basket-cell"><p>1,5 кг х</p></li>
-                <li class="basket-cell"><p>200 руб.</p></li>
-                <li class="basket-cell"><p>300 руб.</p></li>
-              </ul>
-            </div>
-            <p>Итого:<span class="total">750 руб.</span></p>
-            <button class="button" type="submit">Оформить заказ</button>
-          </form>
-        </li>
-      </ul>
-    </div>
-    <section class="info-mini">
-      <p class="work-time">С 10 до 20, ежедневно<span class="call-number">8 812 450-25-25</span></p>
-    </section>
   </nav>
+  <ul class="user-block-list">
+      <li class="user-item"><span>Поиск</span>
+        <form class="search-form" action="https://echo.htmlacademy.ru" method="post">
+          <p>
+            <label class="visually-hidden" for="search-text">Поиск</label>
+            <input type="search" name="search-text" id="" placeholder="Что ищем?">
+          </p>
+        </form>
+      </li>
+      <li class="user-item"><span>Вход</span>
+        <form class="user-login" action="https://echo.htmlacademy.ru" method="post">
+          <p>
+            <label class="visually-hidden" for="user-login">Логин</label>
+            <input type="email" name="login" id="user-login" placeholder="Электронная почта" autofocus>
+          </p>
+          <p>
+            <label class="visually-hidden" for="password">Пароль</label>
+            <input type="password" name="password" id="password" placeholder="Пароль">
+          </p>
+          <div class="container-reg">
+            <button class="button" type="submit">Войти</button>
+            <ul class="reg-list">
+              <li class="reg-item"><a href="#">Забыли пароль?</a></li>
+              <li class="reg-item"><a href="#">Новая регистрация</a></li>
+            </ul>
+          </div>
+        </form>
+      </li>
+      <li class="user-item"><span>Пусто</span>
+        <form class="basket-form" action="https://echo.htmlacademy.ru" method="get">
+          <div class="basket">
+            <ul class="basket-row">
+              <li class="basket-cell">
+                <button class="button" type="button"><img src="img/cross-small-icon.svg" alt="Кнопка удаление товара" srcset=""></button>
+              </li>
+              <li class="basket-cell"><img src="#" alt="Превью товара"></li>
+              <li class="basket-cell"><p>Пломбир с апельсиновым джемом</p></li>
+              <li class="basket-cell"><p>1,5 кг х</p></li>
+              <li class="basket-cell"><p>200 руб.</p></li>
+              <li class="basket-cell"><p>300 руб.</p></li>
+            </ul>
+          </div>
+          <p>Итого:<span class="total">750 руб.</span></p>
+          <button class="button" type="submit">Оформить заказ</button>
+        </form>
+        </li>
+  </ul>
+  <section class="info-mini">
+    <p class="work-time">С 10 до 20, ежедневно<span class="call-number">8 812 450-25-25</span></p>
+  </section>
 </header>
 <main class="main">
   <h1 class="visually-hidden">Интернет-магазин продажи мороженого "Глейси"</h1>
@@ -106,21 +104,21 @@
     </p>
     <button type="submit" class="button" title="Отправить "></button>
   </section>
-  <section class="map-address">
+</main>
+<section class="map-address">
     <img src="img/map-address-img.jpg" alt="Адрес офиса и магазина: ул. Большая Конюшенная 19/8, Санкт-Петербург">
     <form class="feedback-form" action="https://echo.htmlacademy.ru" method="post">
       <p>Адрес главного офиса и офлайн-магазина:<span>ул. Большая Конюшенная 19/8, Санкт-Петербург</span></p>
       <p>Для заказов по телефону:<span>8 812 450-25-25</span>(с 10 до 20 ежедневно)</p>
       <button class="button" type="button">Форма обратной связи</button>
     </form>
-  </section>
-</main>
+</section>
 <footer class="footer">
   <ul class="social-list">
-    <li class="social-item"><a href="#"><img src="img/twitter-icon.svg" alt="Ссылка на страницу в twitter"></a></li>
-    <li class="social-item"><a href="#"></a><img src="img/insta-icon.svg" alt="Ссылка на страницу в Instagramm"></li>
-    <li class="social-item"><a href="#"></a><img src="img/fb-icon.svg" alt="Ссылка на страницу в Facebook"></li>
-    <li class="social-item"><a href="#"></a><img src="img/vk-icon.svg" alt="Ссылка на страницу в Vkontakte"></li>
+    <li class="social-item twitter"><a href="#" title="Наш twitter">Твиттер</a></li>
+    <li class="social-item insta"><a href="#" title="Наш Instagramm">Instagramm</a></li>
+    <li class="social-item fb"><a href="#" title="Наш facebook">Facebook</a></li>
+    <li class="social-item vk"><a href="#" title="Наш Vkontate">VK</a></li>
   </ul>
   <ul class="docs-list">
     <li class="doc-link"><a href="#">Для поставщиков</a></li>
@@ -130,7 +128,7 @@
   </ul>
   <section class="copyright">
     <img src="img/logo-htmlacademy.svg" alt="Лого HTML Academy">
-    <p>Сделано в <a href="https://htmlacademy.ru/intensive/htmlcss">HTML Academy</a></p>
+    <p>Сделано в <a href="https://htmlacademy.ru/intensive/htmlcss">HTML Academy</a> © 2017</p>
   </section>
 </footer>
 </body>
