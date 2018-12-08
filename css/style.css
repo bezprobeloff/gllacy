@@ -140,6 +140,19 @@ body {
   top: 50px;
   right: 50px;
 }
+.work-time {
+  font-family: "Roboto-bold";
+  font-size: 14px;
+  line-height: 16px;
+  color: #ffffff;
+}
+span.call-number {
+  font-family: "Roboto-bold";
+  font-size: 22px;
+  line-height: 24px;
+  color: #ffffff;
+
+}
 
 /* Оформляем main */
 .features {
@@ -233,6 +246,7 @@ input.email-subscribe {
 /* footer */
 .footer {
   display: flex;
+  justify-content: space-between;
 }
 .social-list {
   display: flex;
@@ -240,13 +254,48 @@ input.email-subscribe {
 .social-item   {
   display: flex;
   list-style: none;
-
-}
-.twitter  {
-  background:  url(E:/Projects/914819-gllacy/img/twitter-icon.svg) no-repeat;
   width: 38px;
   height: 38px;;
 
 }
+.twitter a {
+  background:  url(E:/Projects/914819-gllacy/img/twitter-icon.svg) no-repeat;
+}
 
+
+.docs-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 400px;
+
+}
+.doc-link {
+  list-style: none;
+  margin-right: 32px;
+}
+.doc-link a {
+  font-family: "Roboto";
+  font-size: 13px;
+  line-height: 18px;
+  color: #fefefe;
+}
+.doc-link:first-child a {
+  font-family: "Roboto-bold";
+
+}
+
+
+
+.copyright img {
+  width: 108px;
+  height: 39px;
+}
+.copyright p,
+.copyright a
+{
+  font-family: "Roboto";
+  font-size: 12px;
+  line-height: 18px;
+  color: #fefefe;
+}
 

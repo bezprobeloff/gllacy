@@ -6,27 +6,29 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
 <body>
-<header class="header">
-  <nav class="main-nav">
+  <header class="header">
     <a href="" class="header-logo">
       <img src="img/logo.svg" alt="Логотип Глейси">
     </a>
-    <ul class="nav-list">
-      <li class="nav-item"><a href="catalog.html">Каталог</a>
-        <ul class="nav-catalog-list">
-          <li class="nav-item-catalog"><a href="#">Новинки</a></li>
-          <li class="nav-item-catalog"><a href="#">Сливочное</a></li>
-          <li class="nav-item-catalog"><a href="#">Щербеты</a></li>
-          <li class="nav-item-catalog"><a href="#">Фруктовый лед</a></li>
-          <li class="nav-item-catalog"><a href="#">Мелорин</a></li>
-        </ul>
-      </li>
-      <li class="nav-item"><a href="#">Доставка и оплата</a></li>
-      <li class="nav-item"><a href="#">О Компании</a></li>
-    </ul>
-    <div class="user-block">
-      <ul class="user-block-list">
-        <li class="user-item">Поиск
+    <nav class="main-nav">
+      <ul class="nav-list">
+        <li class="nav-item"><a href="catalog.html">Каталог</a>
+          <div class="open">
+          <ul class="nav-catalog-list">
+            <li class="nav-item-catalog"><a href="#">Новинки</a></li>
+            <li class="nav-item-catalog"><a href="#">Сливочное</a></li>
+            <li class="nav-item-catalog"><a href="#">Щербеты</a></li>
+            <li class="nav-item-catalog"><a href="#">Фруктовый лед</a></li>
+            <li class="nav-item-catalog"><a href="#">Мелорин</a></li>
+          </ul>
+        </div>
+        </li>
+        <li class="nav-item"><a href="#">Доставка и оплата</a></li>
+        <li class="nav-item"><a href="#">О Компании</a></li>
+      </ul>
+    </nav>
+    <ul class="user-block-list">
+        <li class="user-item"><span>Поиск</span>
           <form class="search-form" action="https://echo.htmlacademy.ru" method="post">
             <p>
               <label class="visually-hidden" for="search-text">Поиск</label>
@@ -34,7 +36,7 @@
             </p>
           </form>
         </li>
-        <li class="user-item">Вход
+        <li class="user-item"><span>Вход</span>
           <form class="user-login" action="https://echo.htmlacademy.ru" method="post">
             <p>
               <label class="visually-hidden" for="user-login">Логин</label>
@@ -53,8 +55,8 @@
             </div>
           </form>
         </li>
-        <li class="user-item">Пусто
-          <form class="basket-form"action="https://echo.htmlacademy.ru" method="get">
+        <li class="user-item"><span>Пусто</span>
+          <form class="basket-form" action="https://echo.htmlacademy.ru" method="get">
             <div class="basket">
               <ul class="basket-row">
                 <li class="basket-cell">
@@ -70,14 +72,12 @@
             <p>Итого:<span class="total">750 руб.</span></p>
             <button class="button" type="submit">Оформить заказ</button>
           </form>
-        </li>
-      </ul>
-    </div>
+          </li>
+    </ul>
     <section class="info-mini">
       <p class="work-time">С 10 до 20, ежедневно<span class="call-number">8 812 450-25-25</span></p>
     </section>
-  </nav>
-</header>
+  </header>
 <main class="main">
   <nav class="breadcrumbs">
     <ul class="nav-site-list">
