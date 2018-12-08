@@ -4,196 +4,249 @@ body {
   margin: 0% auto;
   padding-left: 27px;
   padding-right: 27px;
+  padding-top: 9px;
+  padding-bottom: 25px;
   border: 1px solid white;
+  position: relative;
+
 }
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('roboto-regular-webfont.woff2') format('woff2'),
+       url('roboto-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto-bold';
+  src: url('roboto-bold-webfont.woff2') format('woff2'),
+       url('roboto-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto-medium';
+  src: url('roboto-medium-webfont.woff2') format('woff2'),
+       url('roboto-medium-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 .visually-hidden {
   display: none;
 }
 
 /*
-Подгружаем иконки
+
 */
-.twitter  {
-  background-image: url("img/twitter-icon.svg");
+
+.header {
+  display: flex;
+  flex-flow: row wrap;
+
 }
 
-/*
-Скрываем всплывающие блоки
-*/
-.nav-item:first-child .nav-catalog-list,
-.user-item:first-child .search-form,
-.user-item:nth-child(2) .user-login,
-.user-item:nth-child(3) .basket-form {
+.header-logo a {
+  width: 154px;
+  height: 64px;
+}
+.main-nav {
+  border: 1px solid white;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.nav-item:first-child {
+
+  position: relative;
+
+}
+.nav-item > a {
+  font-family: 'Roboto-bold';
+
+  font-size: 16px;
+  line-height: 18px;
+  color: #ffffff;
+  padding-left: 12px;
+  padding-right: 12px;
+
+}
+
+.nav-item:hover .nav-catalog-list {
+  display: flex;
+}
+
+
+.nav-item:hover > a {
+  background-color: #f7f6f3;
+  border-radius: 14px;
+  color: #323232;
+  text-decoration: none;
+}
+.open {
+    display: block;
+}
+
+.nav-catalog-list {
+  display: none;
+  flex-direction: column;
+  list-style: none;
+  position: absolute;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+  top: 25px;
+  background-color: #f7f6f3;
+
+}
+.nav-item-catalog > a {
+  font-family: "Roboto";
+  font-size: 14px;
+  line-height: 16px;
+  color: #323232;
+
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+
+
+
+.user-block-list {
+  display: flex;
+  list-style: none;
+
+  justify-content: flex-end;
+  flex-grow: 1;
+
+  border: 1px solid white;
+}
+
+.user-item > form {
   display: none;
 }
-/*
-Отображаем при наведении курсора
-*/
-.nav-item:first-child:hover .nav-catalog-list,
-.user-item:first-child:hover .search-form,
-.user-item:nth-child(2):hover .user-login,
-.user-item:nth-child(3):hover .basket-form {
-  display: block;
-}
-header {
-  border: 1px solid black;
-}
-header .main-nav {
 
-}
-.main-nav .nav-list {
-
-}
-
-.main-nav .user-block {
-
-}
-.user-block .user-block-list {
-
-
-}
 .info-mini {
-
+  position: absolute;
+  top: 50px;
+  right: 50px;
 }
 
-@font-face {
-  font-family: 'robotoregular';
-  src: url('roboto-regular-webfont.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'robotobold';
-  src: url('roboto-bold-webfont.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'robotomedium';
-  src: url('roboto-medium-webfont.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
+/* Оформляем main */
+.features {
+
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  background:  url(E:/Projects/914819-gllacy/img/features-bg.jpg) no-repeat bisque;
 }
 
-/*
-Стилизация текста
-*/
-.nav-item a {
-  font-family: 'robotobold';
-  font-size: 16px;
-  color: #ffffff;
-}
-.user-item {
-  font-family: 'robotomedium';
-  font-size: 14px;
-  color: #ffffff;
-}
-.work-time {
-  font-family: 'robotobold';
-  font-size: 14px;
-  color: #ffffff;
-}
-.work-time .call-number {
-  font-size: 22px;
-}
-section.features {
-  border: 1px solid white;
-  background-color: bisque;
-  background-image: url("/img/features-bg.jpg");
-}
 .features h2 {
-  font-family: 'robotomedium';
+  font-family: "Roboto-medium";
   font-size: 24px;
+  line-height: 30px;
   color: #323232;
+}
+.feature-list {
+  display: flex;
+  flex-wrap: wrap;
 }
 .feature-item {
-  font-family: 'robotoregular';
+  width: 532px;
+  list-style: none;
+  font-family: "Roboto";
   font-size: 16px;
+  line-height: 22px;
   color: #323232;
 }
-article.new-blog {
-  border: 1px solid red;
+
+/*  Оформление атикла нью блог*/
+.new-blog {
+  display: flex;
+  flex-direction: column;
+  background: white url(E:/Projects/914819-gllacy/img/news-ice-blog-pic.jpg) no-repeat;
+  width: 560px;
+
 }
-h3.new-subject {
-  font-family: 'robotomedium';
+.new-subject {
+  font-family: "Roboto-medium";
   font-size: 16px;
+  line-height: 22px;
   color: #323232;
 }
-p.news a {
-  font-family: 'robotobold';
+.news a {
+  font-family: "Roboto-bold";
   font-size: 24px;
+  line-height: 30px;
   color: #323232;
 }
-section.subscribe {
-  border: 1px solid green;
+
+/*  Оформление атикла рассылка*/
+.subscribe {
+  display: flex;
+  flex-direction: column;
+  /*
+  background: white url(E:/Projects/914819-gllacy/img/news-ice-blog-pic.jpg) no-repeat;
+  */
+  width: 560px;
 }
-p.subscribe-text {
-  font-family: 'robotoregular';
+.subscribe-text {
+  font-family: "Roboto";
   font-size: 16px;
-  color: #323232;
+  line-height: 22px;
+  color: #5a5a5a;
 }
-section.map-address {
-  border: 1px solid blue;
-}
-.map-addres img {
+input.email-subscribe {
 
 }
-.feedback-form p {
-  font-family: 'robotoregular';
-  font-size: 14px;
-  color: #323232;
+
+
+/*  Оформление карыт адресов*/
+
+.map-address {
+  display: flex;
 }
 
-.feedback-form span {
-  font-family: 'robotobold';
-  font-size: 18px;
-  color: #323232;
-}
-footer {
-
-}
-.docs-list {
-  border: 1px solid yellow;
-}
-.doc-link a {
-  font-family: 'robotoregular';
-  font-size: 13px;
-  color: #ffffff;
-}
-.doc-link:first-child a{
-  font-family: 'robotobold';
-}
-.copyright p,
-.copyright p a
- {
-  font-family: 'robotoregular';
-  font-size: 12px;
-  color: #ffffff;
-}
-.nav-site-item a  {
-  font-family: 'robotoregular';
-  font-size: 14px;
-  color: #ffffff;
+.map-address img {
+  width: 100%;
 }
 
-h2.main-title {
-  font-family: 'robotobold';
-  font-size: 35px;
-  color: #ffffff;
+.feedback-form {
+  position: absolute;
+  width: 302px;
+  height: 305px;
+  background-color: #ffffff;
 }
-.ice-item a {
-  font-family: 'robotomedium';
-  font-size: 16px;
-  color: #ffffff;
+
+
+/* footer */
+.footer {
+  display: flex;
 }
-.ice-item p.price {
-  font-family: 'robotobold';
-  font-size: 45px;
-  color: #ffffff;
+.social-list {
+  display: flex;
 }
-.ice-item span.unit {
-  font-family: 'robotobold';
-  font-size: 30px;
-  color: #ffffff;
+.social-item   {
+  display: flex;
+  list-style: none;
+
 }
+.twitter  {
+  background:  url(E:/Projects/914819-gllacy/img/twitter-icon.svg) no-repeat;
+  width: 38px;
+  height: 38px;;
+
+}
+
+
