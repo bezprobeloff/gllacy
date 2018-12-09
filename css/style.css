@@ -171,6 +171,10 @@ body {
 
   position: relative;
 }
+.user-item:hover > span {
+  background-color: #f8f7f4;
+  color: #323232;
+}
 
 .user-item:nth-child(2) span::before {
   content: "";
@@ -179,11 +183,22 @@ body {
 
   width: 21px;
   height: 19px;
-  background-image: url(../img/login-icon.svg) ;
+  background-image: url(../img/entrance-icon.svg) ;
   background-size: contain;
   background-repeat: no-repeat;
   left: 10px;
+}
+.user-item:nth-child(2):hover span::before {
+  content: "";
+  position: absolute;
 
+
+  width: 21px;
+  height: 19px;
+  background-image: url(../img/entrance-black-icon.svg) ;
+  background-size: contain;
+  background-repeat: no-repeat;
+  left: 10px;
 }
 .user-item:nth-child(3) span::before {
   content: "";
@@ -193,6 +208,19 @@ body {
   width: 21px;
   height: 19px;
   background-image: url(../img/basket-icon.svg) ;
+  background-size: contain;
+  background-repeat: no-repeat;
+  left: 10px;
+
+}
+.user-item:nth-child(3):hover span::before {
+  content: "";
+  position: absolute;
+
+
+  width: 21px;
+  height: 19px;
+  background-image: url(../img/basket-red-icon.svg) ;
   background-size: contain;
   background-repeat: no-repeat;
   left: 10px;
@@ -218,9 +246,18 @@ body {
 
 }
 
-.user-item:hover > span {
-  background-color: #f8f7f4;
-  color: #323232;
+.user-item:first-child:hover > span::before {
+  content: "";
+  position: absolute;
+
+
+  width: 21px;
+  height: 19px;
+  background-image: url(../img/search-black-icon.svg) ;
+  background-size: contain;
+  background-repeat: no-repeat;
+  left: 3px;
+
 }
 
 /*
@@ -268,13 +305,16 @@ span.call-number {
 
   padding-left: 20px;
   padding-right: 20px;
-  padding-top: 30px;
+  padding-top: 29px;
   padding-bottom: 30px;
 
   background:  url(../img/features-bg.jpg) no-repeat bisque;
+  background-size: cover;
+  border-radius: 15px;
 }
 
 .features h2 {
+  padding: 0;
   font-family: "Roboto-medium";
   font-size: 24px;
   line-height: 30px;
@@ -283,14 +323,32 @@ span.call-number {
 .feature-list {
   display: flex;
   flex-wrap: wrap;
+  padding: 0;
+  justify-content: space-around;
 }
 .feature-item {
-  width: 532px;
+  width: 553px;
+  margin-right: 10px;
+  margin-bottom: 10px;
   list-style: none;
   font-family: "Roboto";
   font-size: 16px;
   line-height: 22px;
   color: #323232;
+  position: relative;
+  border: 1px solid black;
+}
+.feature-item::before {
+  content: "";
+  position: absolute;
+
+
+  width: 21px;
+  height: 19px;
+  background-image: url(../img/feature-thermo-icon.svg) ;
+  background-size: contain;
+  background-repeat: no-repeat;
+  left: 3px;
 }
 
 /*  Оформление атикла нью блог*/
