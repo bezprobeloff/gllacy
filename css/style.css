@@ -150,6 +150,10 @@ body {
   flex-grow: 1;
 
   border: 1px solid white;
+
+}
+.user-item {
+  margin-right: 10px;
 }
 .user-item > span {
   background-color: rgba(255, 255, 255, 0.2);
@@ -159,23 +163,64 @@ body {
   line-height: 16px;
   color: #ffffff;
   padding: 3px;
+  /*
   padding-left: 12px;
+  */
+  padding-left: 33px;
   padding-right: 12px;
-  position: relative;
 
+  position: relative;
 }
-.user-item:nth-child(2) > span::before {
+
+.user-item:nth-child(2) span::before {
   content: "";
   position: absolute;
 
 
-  width: 20px;
-  height: 20px;
-  background-image: url(../img/login-icon.svg);
+  width: 21px;
+  height: 19px;
+  background-image: url(../img/login-icon.svg) ;
   background-size: contain;
   background-repeat: no-repeat;
+  left: 10px;
+
+}
+.user-item:nth-child(3) span::before {
+  content: "";
+  position: absolute;
 
 
+  width: 21px;
+  height: 19px;
+  background-image: url(../img/basket-icon.svg) ;
+  background-size: contain;
+  background-repeat: no-repeat;
+  left: 10px;
+
+}
+
+.user-item:first-child span {
+  padding-left: 15px;
+
+}
+
+.user-item:first-child span::before {
+  content: "";
+  position: absolute;
+
+
+  width: 21px;
+  height: 19px;
+  background-image: url(../img/search-icon.svg) ;
+  background-size: contain;
+  background-repeat: no-repeat;
+  left: 3px;
+
+}
+
+.user-item:hover > span {
+  background-color: #f8f7f4;
+  color: #323232;
 }
 
 /*
