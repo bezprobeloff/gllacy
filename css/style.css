@@ -62,15 +62,15 @@ body {
   margin-left: 0;
   margin-right: 0;
   padding: 0;
-  align-items: center;
+  align-items: baseline;
 }
 
 .nav-item {
 
   position: relative;
 
-  padding-top: 5px;
-  padding-bottom: 5px;
+  height: 32px;
+  border: 1px solid red;
 
 
 }
@@ -79,10 +79,12 @@ body {
 
   font-size: 16px;
   line-height: 18px;
+
+
   color: #ffffff;
+  padding: 3px;
   padding-left: 12px;
   padding-right: 12px;
-
 }
 
 .nav-item:hover .nav-catalog-list {
@@ -149,6 +151,48 @@ body {
 
   border: 1px solid white;
 }
+.user-item > span {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  font-family: "Roboto-medium";
+  font-size: 14px;
+  line-height: 16px;
+  color: #ffffff;
+  padding: 3px;
+  padding-left: 12px;
+  padding-right: 12px;
+  position: relative;
+
+}
+.user-item:nth-child(2) > span::before {
+  content: "";
+  position: absolute;
+
+
+  width: 20px;
+  height: 20px;
+  background-image: url(../img/login-icon.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+
+
+}
+
+/*
+.user-item {
+
+  opacity: 0.2;
+
+  background-color:  #ffffff;
+  border-radius: 5px;
+
+}
+
+.user-item:first-child {
+  background:  url(../img/search-icon.svg) no-repeat;
+}
+*/
+
 
 .user-item > form {
   display: none;
