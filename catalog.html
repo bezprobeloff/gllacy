@@ -3,32 +3,31 @@
   <head>
     <meta charset="UTF-8">
     <title>HTML Academy: Глейси</title>
+    <meta http-equiv="refresh" content="3">
     <link rel="stylesheet" href="css/style.css">
   </head>
 <body>
   <header class="header">
-    <a href="" class="header-logo">
+    <a href="#" class="header-logo">
       <img src="img/logo.svg" alt="Логотип Глейси">
     </a>
     <nav class="main-nav">
       <ul class="nav-list">
         <li class="nav-item"><a href="catalog.html">Каталог</a>
-          <div class="open">
           <ul class="nav-catalog-list">
-            <li class="nav-item-catalog"><a href="#">Новинки</a></li>
-            <li class="nav-item-catalog"><a href="#">Сливочное</a></li>
-            <li class="nav-item-catalog"><a href="#">Щербеты</a></li>
-            <li class="nav-item-catalog"><a href="#">Фруктовый лед</a></li>
-            <li class="nav-item-catalog"><a href="#">Мелорин</a></li>
+            <li class="nav-catalog-item"><a href="#">Новинки</a></li>
+            <li class="nav-catalog-item"><a href="#">Сливочное</a></li>
+            <li class="nav-catalog-item"><a href="#">Щербеты</a></li>
+            <li class="nav-catalog-item"><a href="#">Фруктовый лед</a></li>
+            <li class="nav-catalog-item"><a href="#">Мелорин</a></li>
           </ul>
-        </div>
         </li>
         <li class="nav-item"><a href="#">Доставка и оплата</a></li>
         <li class="nav-item"><a href="#">О Компании</a></li>
       </ul>
     </nav>
     <ul class="user-block-list">
-        <li class="user-item"><span>Поиск</span>
+        <li class="user-item"><span></span>
           <form class="search-form" action="https://echo.htmlacademy.ru" method="post">
             <p>
               <label class="visually-hidden" for="search-text">Поиск</label>
@@ -75,15 +74,16 @@
           </li>
     </ul>
     <section class="info-mini">
-      <p class="work-time">С 10 до 20, ежедневно<span class="call-number">8 812 450-25-25</span></p>
+      <p class="work-time">С 10 до 20, ежедневно</p>
+      <p  class="call-number">8 812 450-25-25</p >
     </section>
   </header>
 <main class="main">
   <nav class="breadcrumbs">
     <ul class="nav-site-list">
-      <li class="nav-site-item"><p><a href="index.html">Главная</a></p></li>
-      <li class="nav-site-item"><p><a href="catalog.html">Каталог</a></p></li>
-      <li class="nav-site-item"><p><a href="#">Сливочное</a></li>
+      <li class="nav-site-item"><a href="index.html">Главная</a></li>
+      <li class="nav-site-item"><a href="catalog.html">Каталог</a></li>
+      <li class="nav-site-item"><a href="#">Сливочное</a></li>
     </ul>
   </nav>
   <h1 class="visually-hidden">Интернет-магазин продажи мороженого "Глейси"</h1>
@@ -141,16 +141,16 @@
 </main>
 <footer class="footer">
   <ul class="social-list">
-    <li class="social-item"><a href="#"><img src="img/twitter-icon.svg" alt="Ссылка на страницу в twitter"></a></li>
-    <li class="social-item"><a href="#"></a><img src="img/insta-icon.svg" alt="Ссылка на страницу в Instagramm"></li>
-    <li class="social-item"><a href="#"></a><img src="img/fb-icon.svg" alt="Ссылка на страницу в Facebook"></li>
-    <li class="social-item"><a href="#"></a><img src="img/vk-icon.svg" alt="Ссылка на страницу в Vkontakte"></li>
+    <li class="social-item twitter"><a href="#" title="Наш twitter"><span class="visually-hidden1">Твиттер</span></a></li>
+    <li class="social-item insta"><a href="#" title="Наш Instagramm"><span class="visually-hidden1">Instagramm</span></a></li>
+    <li class="social-item fb"><a href="#" title="Наш facebook"><span class="visually-hidden1">Facebook</span></a></li>
+    <li class="social-item vk"><a href="#" title="Наш Vkontate"><span class="visually-hidden1">VK</span></a></li>
   </ul>
   <ul class="docs-list">
-    <li class="doc-link"><a href="#">Для поставщиков</a></li>
-    <li class="doc-link"><a href="#">О производстве</a></li>
-    <li class="doc-link"><a href="#">Наши документы</a></li>
-    <li class="doc-link"><a href="#">Экологические стандарты</a></li>
+    <li class="doc-item"><a href="#">Для поставщиков</a></li>
+    <li class="doc-item"><a href="#">О производстве</a></li>
+    <li class="doc-item"><a href="#">Наши документы</a></li>
+    <li class="doc-item"><a href="#">Экологические стандарты</a></li>
   </ul>
   <section class="copyright">
     <img src="img/logo-htmlacademy.svg" alt="Лого HTML Academy">

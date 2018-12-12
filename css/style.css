@@ -513,4 +513,58 @@ input.email-subscribe {
   color: #fefefe;
 }
 
+/* страница каталога */
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  border: 1px solid goldenrod;
+}
+.nav-site-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid khaki;
+}
+.nav-site-item {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  border: 1px solid rebeccapurple;
+}
+.nav-site-item > a {
+  font-family: "Roboto-Regular";
+  font-size: 14px;
+  color: #ffffff;
+}
+
+/* заголовок каталога */
+h2.main-title {
+  font-family: "Roboto-Bold";
+  font-size: 35px;
+  color: #ffffff;
+}
+
+/* сортировка по сетке элементов товара */
+article.ice-creams-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  border: 1px solid black;
+}
+article.ice-item {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 25%;
+
+  box-sizing: border-box;
+  border: 1px solid powderblue;
+}
+
 
