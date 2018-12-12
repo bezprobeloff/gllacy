@@ -47,6 +47,7 @@ header
   flex-flow: row wrap;
   align-items: center;
   margin: 0;
+  position: relative;
 }
 /* header logo */
 .header-logo {
@@ -98,7 +99,7 @@ header
   list-style: none;
   margin: 0px;
   padding: 0;
-  top: 37px;
+  top: 36px;
   left: -8px;
   background-color: #f8f7f4;
   border-radius: 5px;
@@ -156,7 +157,6 @@ header
   position: relative;
   margin: 0;
   padding: 0;
-  border: 1px solid red;
 }
 .user-item > span {
   font-family: 'Roboto-Medium';
@@ -170,6 +170,9 @@ header
 }
 .user-item:first-child > span {
   border-radius: 50%;
+  padding: 0;
+  width: 33px;
+  height: 33px;
 }
 /* добавляем иконки */
 .user-item > span::before {
@@ -183,7 +186,10 @@ header
   left: 16px;
 }
 .user-item:first-child > span::before {
+  top: 8px;
+  left: 8px;
   background-image: url(../img/search-icon.svg);
+  background-size: 17px;
 }
 .user-item:last-child > span::before {
   background-image: url(../img/basket-icon.svg);
@@ -203,6 +209,26 @@ header
   background-image: url(../img/basket-red-icon.svg);
 }
 
+/* оформляем контакты под навигацией */
+.info-mini {
+  position: absolute;
+  top: 69px;
+  right: 0px;
+}
+.info-mini > p {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto-Bold";
+  font-size: 14px;
+  color: #ffffff;
+  text-align: right;
+}
+p.call-number {
+  font-size: 22px;
+}
+
+
+
 /*  Временно лькдючены ВСЕ ФОРМЫ
     УДАЛИТЬ СТРОКУ НИЖЕ!
 */
@@ -211,207 +237,87 @@ form {
 }
 
 
-
-
-/*
-.user-block-list {
-  display: flex;
-  list-style: none;
-
-  justify-content: flex-end;
-  flex-grow: 1;
-
-  border: 1px solid white;
-
-}
-.user-item {
-  margin-right: 10px;
-}
-.user-item > span {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-  font-family: "Roboto-medium";
-  font-size: 14px;
-  line-height: 16px;
-  color: #ffffff;
-  padding: 3px;
-
-  padding-left: 33px;
-  padding-right: 12px;
-
-  position: relative;
-}
-.user-item:hover > span {
-  background-color: #f8f7f4;
-  color: #323232;
-}
-
-.user-item:nth-child(2) span::before {
-  content: "";
-  position: absolute;
-
-
-  width: 21px;
-  height: 19px;
-  background-image: url(../img/entrance-icon.svg) ;
-  background-size: contain;
-  background-repeat: no-repeat;
-  left: 10px;
-}
-.user-item:nth-child(2):hover span::before {
-  content: "";
-  position: absolute;
-
-
-  width: 21px;
-  height: 19px;
-  background-image: url(../img/entrance-black-icon.svg) ;
-  background-size: contain;
-  background-repeat: no-repeat;
-  left: 10px;
-}
-.user-item:nth-child(3) span::before {
-  content: "";
-  position: absolute;
-
-
-  width: 21px;
-  height: 19px;
-  background-image: url(../img/basket-icon.svg) ;
-  background-size: contain;
-  background-repeat: no-repeat;
-  left: 10px;
-
-}
-.user-item:nth-child(3):hover span::before {
-  content: "";
-  position: absolute;
-
-
-  width: 21px;
-  height: 19px;
-  background-image: url(../img/basket-red-icon.svg) ;
-  background-size: contain;
-  background-repeat: no-repeat;
-  left: 10px;
-
-}
-
-.user-item:first-child span {
-  padding-left: 15px;
-
-}
-
-.user-item:first-child span::before {
-  content: "";
-  position: absolute;
-
-
-  width: 21px;
-  height: 19px;
-  background-image: url(../img/search-icon.svg) ;
-  background-size: contain;
-  background-repeat: no-repeat;
-  left: 3px;
-
-}
-
-.user-item:first-child:hover > span::before {
-  content: "";
-  position: absolute;
-
-
-  width: 21px;
-  height: 19px;
-  background-image: url(../img/search-black-icon.svg) ;
-  background-size: contain;
-  background-repeat: no-repeat;
-  left: 3px;
-
-}
-
-
-
-
-.user-item > form {
-  display: none;
-}
-
-
-*/
-
-.info-mini {
-  position: absolute;
-  top: 50px;
-  right: 50px;
-}
-.work-time {
-  font-family: "Roboto-bold";
-  font-size: 14px;
-  line-height: 16px;
-  color: #ffffff;
-  text-align: right;
-}
-span.call-number {
-  font-family: "Roboto-bold";
-  font-size: 22px;
-  line-height: 24px;
-  color: #ffffff;
-  text-align: right;
-}
-
 /* Оформляем main */
+.main {
+  margin: 0;
+  padding: 0;
+}
 .features {
-
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 29px;
-  padding-bottom: 30px;
-
+  margin: 0;
+  padding: 29px 20px;
   background:  url(../img/features-bg.jpg) no-repeat bisque;
   background-size: cover;
   border-radius: 15px;
 }
-
 .features h2 {
   padding: 0;
-  font-family: "Roboto-medium";
+  margin: 0;
+  margin-bottom: 10px;
+  font-family: "Roboto-Medium";
   font-size: 24px;
-  line-height: 30px;
   color: #323232;
 }
 .feature-list {
   display: flex;
   flex-wrap: wrap;
   padding: 0;
-  justify-content: space-around;
+  margin: 0;
+  list-style: none;
 }
 .feature-item {
-  width: 553px;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  list-style: none;
-  font-family: "Roboto";
+  margin: 0px;
+  flex-basis: 50%;
+  box-sizing: border-box;
+  padding-top: 26px;
+  padding-bottom: 26px;
+  padding-left: 56px;
+  padding-right: 0;
+  font-family: "Roboto-Regular";
   font-size: 16px;
-  line-height: 22px;
   color: #323232;
   position: relative;
-  border: 1px solid black;
 }
 .feature-item::before {
   content: "";
   position: absolute;
-
-
-  width: 21px;
-  height: 19px;
-  background-image: url(../img/feature-thermo-icon.svg) ;
-  background-size: contain;
+  width: 49px;
+  height: 49px;
+  background-image: url(../img/feature-ice-cream-icon.svg) ;
   background-repeat: no-repeat;
-  left: 3px;
+  top: 0px;
+  left: 0px;
+}
+.feature-item:nth-child(2)::before {
+  background-image: url(../img/feature-cow-icon.svg) ;
+}
+.feature-item:nth-child(3)::before {
+  background-image: url(../img/feature-eco-icon.svg) ;
+}
+.feature-item:last-child::before {
+  background-image: url(../img/feature-thermo-icon.svg) ;
 }
 
 /*  Оформление атикла нью блог*/
+.new-blog {
+  margin: 0;
+  margin-top: 40px;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  /* НЕ ЗАБЫТЬ ЦЕНТРОВКУ алигн итемс или джастифи-контент*/
+  flex-basis: 40%;
+  width: 40%;
+  flex-shrink: 2;
+}
+
+/*  Оформление секшона рассылка*/
+.subscribe {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+/*
 .new-blog {
   display: flex;
   flex-direction: column;
@@ -431,14 +337,16 @@ span.call-number {
   line-height: 30px;
   color: #323232;
 }
+*/
 
 /*  Оформление атикла рассылка*/
+/*
 .subscribe {
   display: flex;
   flex-direction: column;
   /*
   background: white url(E:/Projects/914819-gllacy/img/news-ice-blog-pic.jpg) no-repeat;
-  */
+
   width: 560px;
 }
 .subscribe-text {
@@ -450,7 +358,7 @@ span.call-number {
 input.email-subscribe {
 
 }
-
+*/
 
 /*  Оформление карыт адресов*/
 
