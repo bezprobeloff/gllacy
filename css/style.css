@@ -12,21 +12,21 @@ body {
 }
 
 @font-face {
-  font-family: 'Roboto';
+  font-family: 'Roboto-Regular';
   src: url('../fonts/roboto-regular-webfont.woff2') format('woff2'),
        url('../fonts/roboto-regular-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Roboto-bold';
+  font-family: 'Roboto-Bold';
   src: url('../fonts/roboto-bold-webfont.woff2') format('woff2'),
        url('../fonts/roboto-bold-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Roboto-medium';
+  font-family: 'Roboto-Medium';
   src: url('../fonts/roboto-medium-webfont.woff2') format('woff2'),
        url('../fonts/roboto-medium-webfont.woff') format('woff');
   font-weight: normal;
@@ -39,109 +39,181 @@ body {
 }
 
 /*
-
+header
 */
 
 .header {
   display: flex;
   flex-flow: row wrap;
-
+  align-items: center;
+  margin: 0;
 }
-
-.header-logo a {
+/* header logo */
+.header-logo {
   width: 154px;
   height: 64px;
+  margin-right: 10px;
 }
+
+/* nav */
 .main-nav {
 
 }
-
 .nav-list {
   display: flex;
-  list-style: none;
-  margin-left: 0;
-  margin-right: 0;
-  padding: 0;
-  align-items: baseline;
-}
-
-.nav-item {
-
+  align-items: center;
   position: relative;
-
-  height: 32px;
-  border: 1px solid red;
-
-
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: #fefefe 1px solid;
+  min-height: 32px;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
 }
 .nav-item > a {
-  font-family: 'Roboto-bold';
-
+  font-family: 'Roboto-Bold';
   font-size: 16px;
-  line-height: 18px;
-
-
   color: #ffffff;
-  padding: 3px;
   padding-left: 12px;
   padding-right: 12px;
+  line-height: 32px;
 }
-
-.nav-item:hover .nav-catalog-list {
-  display: flex;
-}
-
-
 .nav-item:hover > a {
   background-color: #f7f6f3;
-  border-radius: 14px;
-  color: #323232;
+  color: #333333;
   text-decoration: none;
-}
+  border-radius: 15px;
 
+}
 
 .nav-catalog-list {
-  display: none;
+  display: flex;
   flex-direction: column;
-  list-style: none;
+  justify-content: center;
+
   position: absolute;
-  margin-left: 0;
-  margin-right: 0;
+  list-style: none;
+  margin: 0px;
   padding: 0;
-  top: 30px;
-  background-color: #f7f6f3;
+  top: 37px;
+  left: -8px;
+  background-color: #f8f7f4;
   border-radius: 5px;
-
-
-
 }
-.nav-item-catalog:hover {
-  background-color: #fbded8;
-
+.nav-catalog-item {
+  display: flex;
+  align-items: center;
+  min-height: 28px;
 }
-.nav-item-catalog:first-child > a {
-  font-family: "Roboto-bold";
-
-}
-
-
-.nav-item-catalog > a {
-  font-family: "Roboto";
+.nav-catalog-item > a {
+  font-family: 'Roboto-Regular';
   font-size: 14px;
-  line-height: 16px;
   color: #323232;
-
-  padding-left: 14px;
-  padding-right: 20px;
-
-  white-space: nowrap;
   text-decoration: none;
+  padding-left: 20px;
+  padding-right: 12px;
+}
+.nav-catalog-item:first-child {
+  min-height: 38px;
+}
+.nav-catalog-item:first-child > a {
+  font-family: 'Roboto-Bold';
+}
+.nav-catalog-item:hover {
+  background-color: #fbded8;
+}
+/* При наведении на нижнюю или верхнюю ссылку в подменю
+  задаем правильные закругления. Или это костыль?
+*/
+.nav-catalog-item:first-child:hover {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.nav-catalog-item:last-child:hover {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.nav-item:first-child:hover .nav-catalog-list {
+
+}
+
+/*  Хидер.Юзерская часть*/
+.user-block-list {
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 32px;
+  list-style: none;
+  border: 1px solid black;
+}
+.user-item {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: 1px solid red;
+}
+.user-item > span {
+  font-family: 'Roboto-Medium';
+  font-size: 14px;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding-left: 45px;
+  padding-right: 17px;
+  line-height: 32px;
+}
+.user-item:first-child > span {
+  border-radius: 50%;
+}
+/* добавляем иконки */
+.user-item > span::before {
+  content: "";
+  position: absolute;
+  width: 21px;
+  height: 19px;
+  background-image: url(../img/entrance-icon.svg);
+  background-repeat: no-repeat;
+  top: 6px;
+  left: 16px;
+}
+.user-item:first-child > span::before {
+  background-image: url(../img/search-icon.svg);
+}
+.user-item:last-child > span::before {
+  background-image: url(../img/basket-icon.svg);
+}
+/* обработка при наведении */
+.user-item:hover > span {
+  background-color: #f8f7f4;
+  color: #323232;
+}
+.user-item:first-child:hover > span::before {
+  background-image: url(../img/search-black-icon.svg);
+}
+.user-item:nth-child(2):hover > span::before {
+  background-image: url(../img/entrance-black-icon.svg);
+}
+.user-item:last-child:hover > span::before {
+  background-image: url(../img/basket-red-icon.svg);
+}
+
+/*  Временно лькдючены ВСЕ ФОРМЫ
+    УДАЛИТЬ СТРОКУ НИЖЕ!
+*/
+form {
+  display: none;
 }
 
 
 
 
-
+/*
 .user-block-list {
   display: flex;
   list-style: none;
@@ -163,9 +235,7 @@ body {
   line-height: 16px;
   color: #ffffff;
   padding: 3px;
-  /*
-  padding-left: 12px;
-  */
+
   padding-left: 33px;
   padding-right: 12px;
 
@@ -260,25 +330,15 @@ body {
 
 }
 
-/*
-.user-item {
 
-  opacity: 0.2;
-
-  background-color:  #ffffff;
-  border-radius: 5px;
-
-}
-
-.user-item:first-child {
-  background:  url(../img/search-icon.svg) no-repeat;
-}
-*/
 
 
 .user-item > form {
   display: none;
 }
+
+
+*/
 
 .info-mini {
   position: absolute;
