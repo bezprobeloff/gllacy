@@ -105,7 +105,9 @@ body {
   flex-direction: column;
   justify-content: center;
   list-style: none;
+  /*
   width: 143px;
+  */
   position: absolute;
 
   margin: 0;
@@ -126,6 +128,7 @@ body {
   align-items: center;
   min-height: 28px;
   background-color: #f8f7f4;
+  white-space: nowrap;
 }
 .nav-catalog-item > a {
   font-family: 'Roboto-Regular';
@@ -220,6 +223,19 @@ body {
 }
 .user-item:nth-child(2) {
   margin-right: 8px;
+}
+
+/* Рисуем формы для userblocks */
+.user-item:first-child:hover .search-form {
+  display: block;
+  position: absolute;
+  top: 32px;
+  right: 0;
+  background-color: #f8f7f4;
+  border-radius: 5px;
+  box-sizing: content-box;
+  border-top: 10px solid red;
+
 }
 /* обработка при наведении */
 .user-item:hover > span {
@@ -415,7 +431,7 @@ input.email-subscribe {
 }
 .button {
   min-height: 44px;
-  width: 50px;
+
   background-color: #f26843;
 }
 
