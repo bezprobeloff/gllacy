@@ -112,13 +112,25 @@ body {
 
   margin: 0;
   padding: 0;
-  /*
+
   top: 36px;
+  left: -8px;
+  /*
   border-radius: 5px;
   */
+  /*
   top: 32px;
   left: -8px;
+  */
+  /* предыдущий вариант с бордером. попытка уйти на псевдоэлементы
   border-top: 5px solid transparent;
+  */
+  background-color: #f8f7f4;
+  border-radius: 5px;
+  /*
+  border: 1px solid greenyellow;
+  */
+
 }
 .nav-catalog-item {
   /*
@@ -127,8 +139,18 @@ body {
   display: flex;
   align-items: center;
   min-height: 28px;
+  /*
   background-color: #f8f7f4;
+  */
   white-space: nowrap;
+}
+.nav-catalog-list::before {
+  content: "";
+  border: 5px solid transparent;
+  position: absolute;
+  top: -5px;
+  left: 0;
+  width: 100%;
 }
 .nav-catalog-item > a {
   font-family: 'Roboto-Regular';
@@ -139,13 +161,17 @@ body {
   padding-right: 12px;
 }
 .nav-catalog-item:first-child {
+  /*
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
+  */
   min-height: 38px;
 }
 .nav-catalog-item:last-child {
+  /*
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
+  */
 }
 .nav-catalog-item:first-child > a {
   font-family: 'Roboto-Bold';
@@ -229,13 +255,24 @@ body {
 .user-item:first-child:hover .search-form {
   display: block;
   position: absolute;
-  top: 32px;
+  top: 37px;
   right: 0;
   background-color: #f8f7f4;
+  border: 1px solid yellow;
   border-radius: 5px;
   box-sizing: content-box;
+  /*
   border-top: 10px solid red;
+  */
 
+}
+.user-item:first-child:hover .search-form ::before {
+  content: "";
+  border: 5px solid transparent;
+  position: absolute;
+  top: -5px;
+  left: 0;
+  width: 100%;
 }
 /* обработка при наведении */
 .user-item:hover > span {
