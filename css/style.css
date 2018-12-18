@@ -251,7 +251,7 @@ body {
   margin-right: 8px;
 }
 
-/* Рисуем формы для userblocks */
+/* Рисуем формы для userblocks 1. search */
 .user-item:first-child:hover .search-form {
   display: block;
   position: absolute;
@@ -260,11 +260,18 @@ body {
   background-color: #f8f7f4;
   border: 1px solid yellow;
   border-radius: 5px;
+  padding: 20px 15px;
   box-sizing: content-box;
-  /*
-  border-top: 10px solid red;
-  */
-
+}
+.search-form > p > input {
+  line-height: 44px;
+  height: 44px;
+  width: 311px;
+  margin: 0;
+  padding: 15px;
+  font-family: "Roboto-Regular";
+  font-size: 14px;
+  color: #999999;
 }
 .user-item:first-child:hover .search-form ::before {
   content: "";
@@ -274,6 +281,149 @@ body {
   left: 0;
   width: 100%;
 }
+/* Рисуем формы для userblocks 2. login */
+.user-item:nth-child(2):hover .user-login {
+  display: block;
+  position: absolute;
+  top: 37px;
+  right: 0;
+  background-color: #f8f7f4;
+  border: 1px solid yellow;
+  border-radius: 5px;
+  padding: 20px 15px;
+  box-sizing: content-box;
+}
+.user-login > p > input {
+  line-height: 44px;
+  height: 44px;
+  width: 311px;
+  margin: 0;
+  padding: 15px;
+  font-family: "Roboto-Regular";
+  font-size: 14px;
+  color: #999999;
+}
+.user-item:nth-child(2):hover .user-login ::before {
+  content: "";
+  border: 5px solid transparent;
+  position: absolute;
+  top: -5px;
+  left: 0;
+  width: 100%;
+}
+/* Рисуем формы для userblocks 3. basket */
+.user-item:last-child:hover .basket-form {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 37px;
+  right: 0;
+  background-color: #f8f7f4;
+  border: 1px solid yellow;
+  border-radius: 5px;
+  padding: 20px 15px;
+  margin: 0;
+  box-sizing: border-box;
+}
+/*
+.user-login > p > input {
+  line-height: 44px;
+  height: 44px;
+  width: 311px;
+  margin: 0;
+  padding: 15px;
+  font-family: "Roboto-Regular";
+  font-size: 14px;
+  color: #999999;
+}
+*/
+.user-item:last-child:hover .basket-form::before {
+  content: "";
+  border: 5px solid transparent;
+  position: absolute;
+  top: -5px;
+  left: 0;
+  width: 100%;
+}
+.basket-row {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  /* внизу временное решение */
+  width: 539px;
+  justify-content: space-between;
+  /*
+
+  */
+
+
+}
+.basket-cell {
+  padding: 0%;
+  margin: 0;
+  box-sizing: border-box;
+  border: 1px solid black;
+}
+.basket-cell:first-child  {
+  height: 11px;
+  width: 11px;
+  box-sizing: border-box;
+  margin-right: 9px;
+
+}
+/*
+<button class="button" type="button">
+                  <img src="img/cross-small-icon.svg" alt="Кнопка удаление товара" srcset="">
+                </button>
+*/
+.basket-cell:first-child > button {
+  height: 11px;
+  width: 11px;
+  box-sizing: border-box;
+}
+
+.basket-cell:nth-child(2) {
+  margin-right: 14px;
+}
+
+.basket-cell:nth-child(2) > img {
+  height: 33px;
+  width: 33px;
+
+}
+.basket-cell:nth-child(3) {
+
+  width: 233px;
+  padding-right: 14px;
+  font-family: 'Roboto-Regular';
+  font-size: 13px;
+  color: #323232;
+
+}
+.basket-cell:nth-child(3) {
+
+
+  padding-right: 13px;
+  font-family: 'Roboto-Regular';
+  font-size: 13px;
+  color: #323232;
+
+}
+
+.basket-form > p {
+  padding: 0;
+  margin: 0;
+  text-align: right;
+}
+.basket-form > button {
+  padding: 0;
+  margin: 0;
+  align-self: flex-end;
+}
+
+
 /* обработка при наведении */
 .user-item:hover > span {
   background-color: #f8f7f4;
@@ -439,10 +589,11 @@ h3.new-subject {
 
 /*  Оформление секшона рассылка*/
 .subscribe {
-  /*
+
   display: flex;
   flex-direction: column;
-  */
+  justify-content: space-between;
+
   margin: 0;
   box-sizing: border-box;
   /*
@@ -463,10 +614,22 @@ h3.new-subject {
   font-size: 16px;
   color: #5a5a5a;
 }
+
+.subscribe > span {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid firebrick;
+}
 input.email-subscribe {
   line-height: 44px;
+  flex-grow: 1;
+  margin: 0;
+  margin-right: 11px;
 }
 .button {
+
   min-height: 44px;
 
   background-color: #f26843;
@@ -519,21 +682,31 @@ input.email-subscribe {
 }
 .social-item {
   display: flex;
-  min-height: 38px;
+  height: 38px;
   align-items: center;
-  border: greenyellow 1px solid;
+
   margin-right: 10px;
+  /*
+  background-color: rgba(255, 255, 255, 0.5);
+  */
+
+
 }
 .social-item > a {
   width: 38px;
   height: 38px;
   font-size: 0;
+
   background-image: url(../img/twitter-icon.svg);
   background-position: 50% 50%;
   background-size: 32px 32px;
   background-repeat: no-repeat;
-  background-color: rgba(255, 255, 255, 0.5);
+  opacity: 0.8;
   border-radius: 50%;
+  box-shadow: inset 0 0 20px 4px #ffffff ;
+
+
+
 }
 .insta > a {
   background-image: url(../img/insta-icon.svg);
@@ -562,6 +735,7 @@ input.email-subscribe {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
   border: 1px lightgreen solid;
 }
 .doc-item > a {
@@ -571,6 +745,18 @@ input.email-subscribe {
 }
 .doc-item:first-child > a {
   font-family: "Roboto-Bold";
+  position: relative;
+}
+.doc-item:first-child > a::before {
+  content: "";
+  background-image: url(../img/contract-icon.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: -22px;
+  height: 13px;
+  width: 15px;
+  line-height: 13px;
 }
 
 
