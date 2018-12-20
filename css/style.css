@@ -8,6 +8,9 @@ body {
   padding-bottom: 25px;
   border: 1px solid white;
   position: relative;
+  box-sizing: border-box;
+
+
 }
 
 @font-face {
@@ -639,16 +642,52 @@ input.email-subscribe {
 /*  Оформление карыт адресов*/
 
 .map-address {
+  /*
   display: flex;
   align-items: center;
+  */
   padding: 0;
   margin: 0;
+  margin-bottom: 18px;
+
+  position: relative;
+
+
+  /*
   box-sizing: border-box;
+  */
 }
 
-.map-address img {
+.map-address > img {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  width: 1200px;
+  height: 430px;
+  /*
+  height: 430px;
+  */
+  top: 0;
+  left: -27px;
+  z-index: 1;
+
+  /*
   width: 100%;
+  */
 }
+.map-address::before {
+  content: "";
+  position: absolute;
+
+  background-image: url(../img/pin-icon.svg);
+  background-repeat: no-repeat;
+  z-index: 2;
+  width: 80px;
+  height: 140px;
+  top: 139px;
+  left: 216px;
+}
+
 /*
 
 .feedback-form {
@@ -739,6 +778,9 @@ input.email-subscribe {
   border: 1px lightgreen solid;
 }
 .doc-item > a {
+  padding: 0;
+  margin: 0;
+  line-height: 13px;
   font-family: "Roboto-Regular";
   font-size: 13px;
   color: #ffffff;
@@ -762,15 +804,43 @@ input.email-subscribe {
 
 /* копирайт */
 .copyright {
+  padding: 0;
+  margin: 0;
+  /*
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  */
 }
+/*
 .copyright > img {
+  margin: 0;
+  padding: 0;
   height: 39px;
   width: 108px;
+  /*
+  flex-grow: 1;
+
+  background-size: contain;
+
+  border: 1px solid gainsboro;
+}
+*/
+.copyright > svg {
+  width: auto;
+  height: 39px;
+
+  margin: 0;
+  padding: 0;
+
+
+
+
 }
 .copyright p,
 .copyright a {
+  padding: 0;
+  margin: 0;
   font-family: "Roboto-Regular";
   font-size: 12px;
   color: #fefefe;
@@ -797,12 +867,16 @@ input.email-subscribe {
   align-items: center;
   margin: 0;
   padding: 0;
+  padding-right: 20px;
   border: 1px solid rebeccapurple;
 }
 .nav-site-item > a {
   font-family: "Roboto-Regular";
   font-size: 14px;
   color: #ffffff;
+}
+.nav-site-item::after {
+  content: ">>";
 }
 
 /* заголовок каталога */
@@ -828,6 +902,12 @@ article.ice-item {
 
   box-sizing: border-box;
   border: 1px solid powderblue;
+}
+article.ice-item > img {
+  padding: 0;
+  margin: 0;
+  width: 267px;
+  height: 267px;
 }
 
 
