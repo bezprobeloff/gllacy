@@ -67,7 +67,9 @@ body {
   margin: 0;
   padding: 0;
   list-style: none;
+  /*
   border: #fefefe 1px solid;
+  */
   min-height: 32px;
 }
 .nav-item {
@@ -79,26 +81,29 @@ body {
   font-family: 'Roboto-Bold';
   font-size: 16px;
   color: #ffffff;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: 13px;
+  padding-right: 13px;
   line-height: 32px;
+  border: 1px solid black;
+  text-decoration: none;
+  position: relative;
 }
+.nav-item > a::before {
+  content: "";
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  position: absolute;
+  bottom: 7px;
+  left: 13px;
+  width: calc(100% - 26px);
+}
+
 .nav-item:hover > a {
   background-color: #f7f6f3;
   color: #333333;
   text-decoration: none;
-  border-radius: 15px;
+  border-radius: 16px;
 }
-/*  попытка решить с помощью контейнера
-.open-submenu {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: #f26843 1px solid;
-}
-*/
+
 /* при наведении выводим список */
 .nav-catalog-list {
   display: none;
@@ -108,9 +113,6 @@ body {
   flex-direction: column;
   justify-content: center;
   list-style: none;
-  /*
-  width: 143px;
-  */
   position: absolute;
 
   margin: 0;
@@ -118,33 +120,14 @@ body {
 
   top: 36px;
   left: -8px;
-  /*
-  border-radius: 5px;
-  */
-  /*
-  top: 32px;
-  left: -8px;
-  */
-  /* предыдущий вариант с бордером. попытка уйти на псевдоэлементы
-  border-top: 5px solid transparent;
-  */
   background-color: #f8f7f4;
   border-radius: 5px;
-  /*
-  border: 1px solid greenyellow;
-  */
 
 }
 .nav-catalog-item {
-  /*
-  display: flex;
-  */
   display: flex;
   align-items: center;
   min-height: 28px;
-  /*
-  background-color: #f8f7f4;
-  */
   white-space: nowrap;
 }
 .nav-catalog-list::before {
@@ -164,11 +147,16 @@ body {
   padding-right: 12px;
 }
 .nav-catalog-item:first-child {
-  /*
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
-  */
+  position: relative;
   min-height: 38px;
+}
+.nav-catalog-item:first-child::before {
+  content: "";
+  border-bottom: 1px solid rgba(50, 50, 50, 0.2);
+  position: absolute;
+  bottom: 0px;
+  left: 6px;
+  width: calc(100% - 15px);
 }
 .nav-catalog-item:last-child {
   /*
@@ -608,6 +596,12 @@ h3.new-subject {
   background-color: #f8f7f4;
 
   border-radius: 10px;
+  border-style: solid;
+  border-image-width: 5px;
+  border-image-source: url(../img/post-bg.svg);
+  border-image-slice: 10;
+  border-image-repeat: no-repeat;
+
 }
 
 .subscribe-text {
@@ -890,24 +884,102 @@ h2.main-title {
 article.ice-creams-list {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
+  align-content: flex-end;
+
+  justify-content: space-between;
+
   margin: 0;
   padding: 0;
   border: 1px solid black;
+  box-sizing: border-box;
 }
 article.ice-item {
   display: flex;
   flex-direction: column;
   flex-basis: 25%;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 40px;
 
+
+  position: relative;
   box-sizing: border-box;
   border: 1px solid powderblue;
+  padding-top: 6px;
+  /*
+  padding-left: 13px;
+  padding-right: 13px;
+  */
 }
 article.ice-item > img {
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
+  margin-bottom: 16px;
   width: 267px;
   height: 267px;
+
+  background-clip: border-box;
+  border-radius: 50%;
+
+}
+article.ice-item > .price {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto-Bold";
+  font-size: 45px;
+  color: #ffffff;
+  position: absolute;
+  top: 214px;
+  left: 0;
+  line-height: 34px;
+}
+article.ice-item .unit {
+  padding-left: 37px;
+
+  font-size: 30px;
+  position: relative;
+}
+article.ice-item .unit::before {
+  content: "";
+  padding: 0;
+  margin: 0;
+  background-image: url(../img/ruble.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 7px;
+  top: 0px;
+
+  height: 34px;
+  width: 30px;
+
+}
+article.ice-item:hover {
+  background-color: rgba(248, 247, 244, 0.2);
+}
+/*
+article.ice-item .ruble {
+  padding: 0;
+  margin: 0;
+  line-height: 45px;
+  height: 34px;
+  width: 100%;
+  background-image: url(../img/ruble.svg);
+  background-repeat: no-repeat;
+  font-size: 0px;
+
+  vertical-align: middle;
+  border: 1px solid black;
+
+}
+*/
+article.ice-item > a {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto-Medium";
+  font-size: 16px;
+  text-align: center;
+  color: #ffffff;
 }
 
 
