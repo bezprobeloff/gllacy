@@ -70,6 +70,7 @@ form {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
+  margin-bottom: 28px;
 }
 /* header logo */
 .header-logo {
@@ -622,9 +623,9 @@ input.email-subscribe {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* Удалить  */
+  /* Удалить
   border: #5a5a5a 1px solid;
-  /*          */
+         */
 }
 /*  социалка */
 .social-list {
@@ -632,9 +633,9 @@ input.email-subscribe {
   align-items: center;
   min-height: 38px;
   list-style: none;
-  /* Удалить */
+  /* Удалить
   border: #f26843 1px solid;
-  /*              */
+               */
 }
 .social-item {
   display: flex;
@@ -678,7 +679,7 @@ input.email-subscribe {
   display: flex;
   flex-basis: 50%;
   box-sizing: border-box;
-
+  position: relative;
   /*Удалить
   border: 1px lightgreen solid;
        */
@@ -695,7 +696,7 @@ input.email-subscribe {
   text-decoration: none;
 }
 /* Вставляем подчеркивание */
-.doc-item > a::before {
+.doc-item a::before {
   position: absolute;
   left: 0px;
   bottom: -2px;
@@ -721,6 +722,7 @@ input.email-subscribe {
   background-repeat: no-repeat;
   line-height: 13px;
 }
+
 /* копирайт */
 .copyright {
 }
@@ -730,8 +732,21 @@ input.email-subscribe {
 }
 .copyright p,
 .copyright a {
+  position: relative;
   font-size: 12px;
   color: #fefefe;
+  text-decoration: none
+}
+/* Вставляем подчеркивание */
+.copyright a::before {
+  position: absolute;
+  left: 0px;
+  bottom: -1px;
+
+  width: 100%;
+
+  content: "";
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* страница каталога */
