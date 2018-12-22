@@ -57,8 +57,8 @@ form {
   font-family: "Roboto-Bold", "Arial", sans-serif;
   color: #fefefe;
   border: none;
-  background-color: #f26843;
   box-shadow: 0px 2px 2px 0 rgba(172, 16, 0, 0.64);
+  background-image: linear-gradient(to top, #e74a35, #f26843);
 }
 
 /*              */
@@ -572,9 +572,9 @@ h3.new-subject {
 .subscribe > span {
   display: flex;
   justify-content: space-between;
-  /*   Удалить   */
+  /*   Удалить
   border: 1px solid firebrick;
-  /*            */
+            */
 }
 input.email-subscribe {
   flex-grow: 1;
@@ -899,9 +899,11 @@ article.ice-item > a::before {
 .nav-catalog-list,
 .basket-form,
 .user-login,
-.search-form {
+.search-form,
+.ice-item:hover {
   box-shadow: 0px 20px 20px 0 rgba(0, 0, 0, 0.4);
 }
+
 /* Нажатие на Каталог */
 .nav-item:active > a {
   box-shadow: inset 0px 2px 1px 0 #696969;
@@ -918,12 +920,25 @@ article.ice-item > a::before {
 }
 /* Стилизация ссылок*/
 .doc-item:hover > a,
-.copyright a:hover ,
-.breadcrumb-item:hover > a {
-  color: #ffbc9e;
-}
+.doc-item:hover > a::before,
+.copyright a:hover,
+.copyright a:hover::before,
+.breadcrumb-item:hover > a,
+.breadcrumb-item:hover > a::before,
 .doc-item:active > a,
 .copyright a:active,
 .breadcrumb-item:active > a {
   color: #ffbc9e;
+  border-color: #ffbc9e;
 }
+
+.button:hover {
+  box-shadow: 0px 2px 2px 0 #ac1000;
+  background-image: linear-gradient(to top, #e74a35, #f26843), linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
+}
+.button:active {
+  box-shadow: inset 0px 2px 2px 0 #942718;
+  background-image: linear-gradient(to bottom, #e74a35, #f26843), linear-gradient(to bottom, rgba(0, 0, 0, 0.07), rgba(0, 0, 0, 0.07));
+}
+
+
