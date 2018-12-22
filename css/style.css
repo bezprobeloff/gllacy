@@ -813,7 +813,7 @@ article.ice-creams-list {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  align-content: flex-end;
+
   justify-content: space-between;
   box-sizing: border-box;
   /* УАДИЛТЬ */
@@ -872,10 +872,58 @@ article.ice-item .unit::before {
   background-repeat: no-repeat;
 }
 article.ice-item:hover {
+  border-radius: 10px;
   background-color: rgba(248, 247, 244, 0.2);
 }
 article.ice-item > a {
+  position: relative;
   font-family: "Roboto-Medium", "Arial", sans-serif;
   font-size: 16px;
   text-align: center;
+  text-decoration: none;
+  border: 1px solid greenyellow;
+}
+/* Вставляем подчеркивание */
+article.ice-item > a::before {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+
+  width: 100%;
+
+  content: "";
+  border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Тень меню и форм */
+.nav-catalog-list,
+.basket-form,
+.user-login,
+.search-form {
+  box-shadow: 0px 20px 20px 0 rgba(0, 0, 0, 0.4);
+}
+/* Нажатие на Каталог */
+.nav-item:active > a {
+  box-shadow: inset 0px 2px 1px 0 #696969;
+  background-color: #ededed;
+}
+/* нажатие на подменю каталога */
+.nav-catalog-item:active {
+  background-color: #f6b5a5;
+}
+/* находимся на текущей странице подменю каталога */
+.nav-catalog-item.current {
+  color: #ffffff;
+  background-color: #d07058;
+}
+/* Стилизация ссылок*/
+.doc-item:hover > a,
+.copyright a:hover ,
+.breadcrumb-item:hover > a {
+  color: #ffbc9e;
+}
+.doc-item:active > a,
+.copyright a:active,
+.breadcrumb-item:active > a {
+  color: #ffbc9e;
 }
