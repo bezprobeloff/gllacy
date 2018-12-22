@@ -754,31 +754,52 @@ input.email-subscribe {
 .breadcrumbs {
   display: flex;
   align-items: center;
-  /*Удалить */
+  /*Удалить
   border: 1px solid goldenrod;
-  /*        */
+         */
 }
 .breadcrumb-list {
   display: flex;
   align-items: center;
   list-style: none;
-  /*Удалить */
+  /*Удалить
   border: 1px solid khaki;
-  /*        */
+          */
 }
 .breadcrumb-item {
+  position: relative;
   display: flex;
   align-items: center;
-  padding-right: 20px;
-  /*Удалить */
+  margin-right: 20px;
+  min-height: 14px;
+  /*Удалить
   border: 1px solid rebeccapurple;
-  /*        */
+        */
 }
 .breadcrumb-item > a {
+  position: relative;
   font-size: 14px;
+  line-height: 14px;
+  text-decoration: none;
 }
-.breadcrumb-item::after {
+/* Вставляем подчеркивание */
+.breadcrumb-item a::before {
+  position: absolute;
+  left: 0px;
+  bottom: -0px;
+
+  width: 100%;
+
   content: "";
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+/* Вставляем символ » */
+.breadcrumb-item:not(:last-child)::after {
+  position: absolute;
+  top: -5px;
+  right: -15px;
+  content: "»";
+  width: auto;
 }
 /* заголовок каталога */
 h2.main-title {
