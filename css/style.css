@@ -52,6 +52,15 @@ body {
 form {
   display: none;
 }
+/* КНОПКА ОБЩАЯ*/
+.button {
+  font-family: "Roboto-Bold", "Arial", sans-serif;
+  color: #fefefe;
+  border: none;
+  background-color: #f26843;
+  box-shadow: 0px 2px 2px 0 rgba(172, 16, 0, 0.64);
+}
+
 /*              */
 
 /*  header */
@@ -547,13 +556,12 @@ h3.new-subject {
   padding: 37px 27px;
 
   box-sizing: border-box;
-
   background-color: #f8f7f4;
   border-radius: 10px;
   border-style: solid;
-  border-image-width: 5px;
+  border-image-width: 6px;
   border-image-source: url(../img/post-bg.svg);
-  border-image-slice: 10;
+  border-image-slice: 6;
   border-image-repeat: no-repeat;
 }
 .subscribe-text {
@@ -571,11 +579,15 @@ input.email-subscribe {
   flex-grow: 1;
   margin-right: 11px;
   line-height: 44px;
+  border: 1px solid rgba(178, 178, 178, 0.52);
+  border-radius: 5px;
 }
-/* КНОПКА ОБЩАЯ Доработать*/
-.button {
-  min-height: 44px;
-  background-color: #f26843;
+.subscribe .button {
+  font-size: 18px;
+  padding-right: 19px;
+  padding-left: 19px;
+
+  border-radius: 25px;
 }
 
 /*  Оформление карыт адресов*/
@@ -658,25 +670,42 @@ input.email-subscribe {
   display: flex;
   flex-wrap: wrap;
   box-sizing: border-box;
-  /*Удалить */
+  /*Удалить
   border: 1px blueviolet solid;
-  /*          */
+          */
 }
 .doc-item {
   display: flex;
   flex-basis: 50%;
   box-sizing: border-box;
-  /*Удалить */
+
+  /*Удалить
   border: 1px lightgreen solid;
-  /*          */
+       */
+}
+.doc-item:first-child,
+.doc-item:nth-child(2) {
+  margin-bottom: 9px;
 }
 .doc-item > a {
+  position: relative;
   font-family: "Roboto-Regular", "Arial", sans-serif;
   font-size: 13px;
   line-height: 13px;
+  text-decoration: none;
+}
+/* Вставляем подчеркивание */
+.doc-item > a::before {
+  position: absolute;
+  left: 0px;
+  bottom: -2px;
+
+  width: 100%;
+
+  content: "";
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 .doc-item:first-child > a {
-  position: relative;
   font-family: "Roboto-Bold", "Arial", sans-serif;
 }
 .doc-item:first-child > a::before {
