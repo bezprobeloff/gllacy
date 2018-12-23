@@ -652,8 +652,16 @@ input.email-subscribe {
   background-position: 50% 50%;
   background-size: 32px 32px;
   background-repeat: no-repeat;
-  opacity: 0.8;
+  background-color: rgba(0, 0, 0, 0.2);
   border-radius: 50%;
+  box-shadow: inset 0 0 20px 4px #ffffff ;
+}
+.social-item:hover > a {
+  background-color: rgba(0, 0, 0, 0);
+  box-shadow: inset 0 0 20px 4px #ffffff ;
+}
+.social-item:active > a {
+  background-color: rgba(0, 0, 0, 0.3);
   box-shadow: inset 0 0 20px 4px #ffffff ;
 }
 .insta > a {
@@ -709,7 +717,7 @@ input.email-subscribe {
 .doc-item:first-child > a {
   font-family: "Roboto-Bold", "Arial", sans-serif;
 }
-.doc-item:first-child > a::before {
+.doc-item:first-child > a::after {
   position: absolute;
   top: 0;
   left: -22px;
