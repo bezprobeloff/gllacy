@@ -52,7 +52,9 @@ body {
   margin-left: 27px;
   margin-right: 27px;
 }
-
+a {
+  text-decoration: none;
+}
 
 /* УДАЛИТЬ*/
 .visually-hidden {
@@ -66,6 +68,14 @@ form {
   font-family: "Roboto-Bold", "Arial", sans-serif;
   color: #fefefe;
   border: none;
+  box-shadow: 0px 2px 2px 0 rgba(172, 16, 0, 0.64);
+  background-image: linear-gradient(to top, #e74a35, #f26843);
+}
+/* Рисуем форму кнопки из ссылки */
+.link-button {
+  font-family: "Roboto-Bold", "Arial", sans-serif;
+  color: #fefefe;
+  text-align: center;
   box-shadow: 0px 2px 2px 0 rgba(172, 16, 0, 0.64);
   background-image: linear-gradient(to top, #e74a35, #f26843);
 }
@@ -119,13 +129,13 @@ form {
   /* Удалить */
   border: 1px solid black;
   /*                     */
-  text-decoration: none;
 }
 /* Текущая страница */
 .nav-item.current > a {
   background-color: #d07058;
   border-radius: 16px;
 }
+
 .nav-item:not(.current) > a::before {
   position: absolute;
   left: 13px;
@@ -136,9 +146,9 @@ form {
   content: "";
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
+
 /* При наведении на элемент навигации */
 .nav-item:hover > a {
-  text-decoration: none;
   color: #333333;
   border-radius: 16px;
 
@@ -187,8 +197,6 @@ form {
 
   font-size: 14px;
   color: #323232;
-
-  text-decoration: none;
 }
 /* Оформляем первый элемент подменю */
 .nav-catalog-item:first-child {
@@ -555,7 +563,6 @@ h3.new-subject {
 .news > a {
   font-family: "Roboto-Bold", "Arial", sans-serif;
   font-size: 24px;
-  text-decoration: none;
   color: #323232;
 }
 /*  Оформление секшона рассылка*/
@@ -735,9 +742,8 @@ input.email-subscribe {
   font-family: "Roboto-Regular", "Arial", sans-serif;
   font-size: 13px;
   line-height: 13px;
-  text-decoration: none;
 }
-/* Вставляем подчеркивание */
+/* Вставляем подчеркивание
 .doc-item a::before {
   position: absolute;
   left: 0px;
@@ -748,6 +754,7 @@ input.email-subscribe {
   content: "";
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
+*/
 .doc-item:first-child > a {
   font-family: "Roboto-Bold", "Arial", sans-serif;
 }
@@ -778,9 +785,8 @@ input.email-subscribe {
   position: relative;
   font-size: 12px;
   color: #fefefe;
-  text-decoration: none
 }
-/* Вставляем подчеркивание */
+/* Вставляем подчеркивание
 .copyright a::before {
   position: absolute;
   left: 0px;
@@ -791,7 +797,7 @@ input.email-subscribe {
   content: "";
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
-
+*/
 /* страница каталога */
 /* хлебные крошки */
 .breadcrumbs {
@@ -823,9 +829,8 @@ input.email-subscribe {
   position: relative;
   font-size: 14px;
   line-height: 14px;
-  text-decoration: none;
 }
-/* Вставляем подчеркивание */
+/* Вставляем подчеркивание
 .breadcrumb-item a::before {
   position: absolute;
   left: 0px;
@@ -836,6 +841,7 @@ input.email-subscribe {
   content: "";
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
+*/
 /* Вставляем символ » */
 .breadcrumb-item:not(:last-child)::after {
   position: absolute;
@@ -874,13 +880,15 @@ article.ice-item {
   padding-top: 6px;
   margin-bottom: 40px;
   box-sizing: border-box;
-  /* УАДИЛТЬ */
+  /* УАДИЛТЬ
   border: 1px solid powderblue;
-  /*            */
+           */
 }
 article.ice-item > img {
   margin: 0 auto;
+  /*
   margin-bottom: 16px;
+  */
   width: 267px;
   height: 267px;
 
@@ -890,7 +898,7 @@ article.ice-item > img {
 article.ice-item > .price {
   position: absolute;
   top: 214px;
-  left: 0;
+  left: 13px;
 
   font-family: "Roboto-Bold", "Arial", sans-serif;
   font-size: 45px;
@@ -914,37 +922,45 @@ article.ice-item .unit::before {
   background-image: url(../img/ruble.svg);
   background-repeat: no-repeat;
 }
-article.ice-item:hover::before {
+.desc-ice {
+  width: 267px;
+  font-family: "Roboto-Medium", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+}
+.desc-ice a {
+
+}
+
+article.ice-item:hover .container {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 405px;
   min-height: 405px;
-  content: "";
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   border-radius: 10px;
   background-color: rgba(248, 247, 244, 0.2);
+  z-index: 10;
 }
-article.ice-item > a {
-  position: relative;
-
-  font-family: "Roboto-Medium", "Arial", sans-serif;
-  font-size: 16px;
-  text-align: center;
-  text-decoration: none;
-  border: 1px solid greenyellow;
+.ice-item .link-button{
+  display: none;
 }
+article.ice-item:hover .link-button {
+  display: block;
+  margin: 0 auto;
+  padding: 0 17px;
+  line-height: 44px;
+  margin-bottom: 22px;
 
-/* Вставляем подчеркивание */
-article.ice-item > a::before {
-  position: absolute;
-  left: 0px;
-  bottom: 0px;
-
-  width: 100%;
-
-  content: "";
-  border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+  font-size: 18px;
+  white-space: nowrap;
+  border-radius: 25px;
 }
 
 /* Тень меню и форм */
@@ -971,6 +987,14 @@ article.ice-item:hover::before {
   color: #ffffff;
   background-color: #d07058;
 }
+/* подчеркиваем ссылку */
+.doc-item  a,
+.copyright a,
+.breadcrumb-item a,
+.desc-ice a {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
 /* Стилизация ссылок*/
 .doc-item:hover > a,
 .doc-item:hover > a::before,
@@ -985,11 +1009,14 @@ article.ice-item:hover::before {
   border-color: #ffbc9e;
 }
 
-.button:hover {
+
+.button:hover,
+.link-button:hover {
   box-shadow: 0px 2px 2px 0 #ac1000;
   background-image: linear-gradient(to top, #e74a35, #f26843), linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
 }
-.button:active {
+.button:active,
+.link-button:active {
   box-shadow: inset 0px 2px 2px 0 #942718;
   background-image: linear-gradient(to bottom, #e74a35, #f26843), linear-gradient(to bottom, rgba(0, 0, 0, 0.07), rgba(0, 0, 0, 0.07));
 }
