@@ -31,10 +31,12 @@ body {
 
   width: 1200px;
   margin: 0% auto;
+  /*
   padding-left: 27px;
   padding-right: 27px;
   padding-top: 9px;
   padding-bottom: 25px;
+  */
 
   font-family: "Roboto-Regular", "Arial", sans-serif;
   color: #ffffff;
@@ -44,6 +46,13 @@ body {
   border: 1px solid white;
   /*        */
 }
+.header,
+.main,
+.footer {
+  margin-left: 27px;
+  margin-right: 27px;
+}
+
 
 /* УДАЛИТЬ*/
 .visually-hidden {
@@ -70,6 +79,7 @@ form {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
+  padding-top: 9px;
   margin-bottom: 28px;
 }
 /* header logo */
@@ -550,13 +560,18 @@ h3.new-subject {
 }
 /*  Оформление секшона рассылка*/
 .subscribe {
+  flex-basis: 50%;
+  /*
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex-basis: 50%;
-  padding: 37px 27px;
+  */
+
 
   box-sizing: border-box;
+  /*
+  padding: 37px 27px;
   background-color: #f8f7f4;
   border-radius: 10px;
   border-style: solid;
@@ -564,12 +579,27 @@ h3.new-subject {
   border-image-source: url(../img/post-bg.svg);
   border-image-slice: 6;
   border-image-repeat: no-repeat;
+  */
+  padding: 6px;
+  background-image: url(../img/post-bg.svg);
+  background-repeat: no-repeat;
+  border-radius: 10px;
+
+}
+.subscribe > .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 31px 21px;
+  background-color: #f8f7f4;
+  border-radius: 10px;
+  box-sizing: border-box;
 }
 .subscribe-text {
   font-size: 16px;
   color: #5a5a5a;
 }
-.subscribe > span {
+.subscribe span {
   display: flex;
   justify-content: space-between;
   /*   Удалить
@@ -594,13 +624,15 @@ input.email-subscribe {
 /*  Оформление карыт адресов*/
 .map-address {
   position: relative;
+  /*
   margin-bottom: 18px;
+  */
 }
 
 .map-address > img {
   position: relative;
   top: 0;
-  left: -27px;
+  left: 0px;
 
   width: 1200px;
   height: 430px;
@@ -609,7 +641,7 @@ input.email-subscribe {
 .map-address::before {
   position: absolute;
   top: 139px;
-  left: 216px;
+  left: 235px;
   width: 80px;
   height: 140px;
   z-index: 2;
@@ -623,6 +655,8 @@ input.email-subscribe {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-top: 18px;
+  padding-bottom: 25px;
   /* Удалить
   border: #5a5a5a 1px solid;
          */
@@ -737,6 +771,7 @@ input.email-subscribe {
 .copyright > svg {
   width: auto;
   height: 39px;
+  overflow: initial;
 }
 .copyright p,
 .copyright a {
@@ -899,6 +934,7 @@ article.ice-item > a {
   text-decoration: none;
   border: 1px solid greenyellow;
 }
+
 /* Вставляем подчеркивание */
 article.ice-item > a::before {
   position: absolute;
