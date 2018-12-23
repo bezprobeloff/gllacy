@@ -916,7 +916,7 @@ article.ice-item > a::before {
 .basket-form,
 .user-login,
 .search-form,
-.ice-item:hover {
+article.ice-item:hover::before {
   box-shadow: 0px 20px 20px 0 rgba(0, 0, 0, 0.4);
   z-index: 10;
 }
