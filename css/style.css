@@ -24,6 +24,7 @@
   padding: 0;
 
   color: #ffffff;
+  list-style: none;
 }
 body {
   position: relative;
@@ -31,20 +32,11 @@ body {
 
   width: 1200px;
   margin: 0% auto;
-  /*
-  padding-left: 27px;
-  padding-right: 27px;
-  padding-top: 9px;
-  padding-bottom: 25px;
-  */
 
   font-family: "Roboto-Regular", "Arial", sans-serif;
   color: #ffffff;
 
   background-color: #849d8f;
-  /* УДАЛИТЬ */
-  border: 1px solid white;
-  /*        */
 }
 .header,
 .main,
@@ -58,9 +50,6 @@ a {
 
 /* УДАЛИТЬ*/
 .visually-hidden {
-  display: none;
-}
-form {
   display: none;
 }
 /* КНОПКА ОБЩАЯ*/
@@ -81,10 +70,27 @@ form {
 }
 /* Стилизация общей формы*/
 form {
+  display: none;
+  border-radius: 5px;
   background-color: #f8f7f4;
-
+  box-shadow: 0px 20px 20px 0 rgba(0, 0, 0, 0.4);
+  z-index: 10;
 }
-/* Стилизация input  */
+/* Стилизация общая для input  */
+input {
+  padding-right: 15px;
+  padding-left: 15px;
+  line-height: 44px;
+  min-height: 44px;
+  font-family: "Roboto-Regular", "Arial", sans-serif;
+  font-size: 16px;
+  color: #999999;
+  background-color: #ffffff;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: #d3d3d2;
+  border-width: 1px;
+}
 
 /*  header */
 .header {
@@ -129,10 +135,6 @@ form {
 
   font-family: "Roboto-Bold", "Arial", sans-serif;
   font-size: 16px;
-
-  /* Удалить */
-  border: 1px solid black;
-  /*                     */
 }
 /* Текущая страница */
 .nav-item.current > a {
@@ -243,7 +245,6 @@ form {
   min-height: 32px;
 
   list-style: none;
-  border: 1px solid black;
 }
 /* Элемент юзерской части */
 .user-item {
@@ -300,7 +301,138 @@ form {
 .user-item:nth-child(2) {
   margin-right: 8px;
 }
-/* Рисуем формы для userblocks 1. search */
+/* Рисуем формы общие для юзерской части */
+.user-item:hover form {
+  position: absolute;
+  top: 37px;
+  right: 0;
+
+  display: flex;
+  flex-direction: column;
+  padding: 20px 15px;
+  box-sizing: border-box;
+}
+/* добавляем линию чтобы не пропадала форма при наведении*/
+.user-item:first-child:hover .search-form::before,
+.user-item:nth-child(2):hover .user-login::before,
+.user-item:last-child:hover .basket-form::before {
+  position: absolute;
+  top: -5px;
+  left: 0;
+
+  width: 100%;
+
+  content: "";
+  border: 10px solid transparent;
+}
+/* Рисуем формы для userblocks 2. login */
+.user-login{
+  width: 277px;
+}
+.user-login input[type="email"],
+.user-login input[type="password"] {
+  margin-bottom: 20px;
+}
+.container-reg {
+  display: flex;
+  justify-content: space-between;
+  min-height: 44px;
+}
+.container-reg .button {
+  margin-right: 20px;
+  padding-right: 25px;
+  padding-left: 25px;
+  border-radius: 22px;
+
+  font-family: "Roboto-Bold", "Arial", sans-serif;
+  font-size: 18px;
+}
+.reg-item a {
+  font-family: "Roboto-Regular", "Arial", sans-serif;
+  font-size: 13px;
+  color: #323232;
+  border-bottom: 1px solid #323232;
+}
+/* Рисуем формы для корзины */
+.basket {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #cacac7;
+}
+.basket-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  box-sizing: border-box;
+}
+.basket-cell {
+  font-family: "Roboto-Regular", "Arial", sans-serif;
+  font-size: 13px;
+  color: #323232;
+}
+.basket-cell:first-child {
+
+}
+.basket-cell button {
+  width: 11px;
+  height: 11px;
+  border-style: none;
+  background-image: url("../img/cross-small-icon.svg");
+  background-repeat: no-repeat;
+  background-color: transparent;
+}
+.basket-cell:nth-child(2) img {
+  padding: 0 14px;
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  background-clip: border-box;
+}
+.basket-cell:nth-child(3) {
+  width: 247px;
+  padding-right: 15px;
+  box-sizing: border-box;
+}
+.basket-cell:nth-child(4) {
+  width: 122px;
+  padding-right: 15px;
+  box-sizing: border-box;
+}
+.basket-cell:nth-child(4) span {
+  color: #999999;
+}
+.basket-cell:nth-child(5) {
+  width: 68px;
+  padding-right: 15px;
+  box-sizing: border-box;
+}
+
+.basket-form > p,
+.basket-form .total
+{
+  padding: 17px 0;
+  font-family: "Roboto-Bold", "Arial", sans-serif;
+  font-size: 15px;
+  color: #323232;
+}
+.basket-form > p,
+.basket-form > button {
+  align-self: flex-end;
+}
+.basket-form > button {
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 22px;
+  font-family: "Roboto-Bold", "Arial", sans-serif;
+  font-size: 18px;
+  color: #fefefe;
+}
+
+
+
+
+/* Рисуем формы для userblocks 1. search
 .user-item:first-child:hover .search-form {
   position: absolute;
   top: 37px;
@@ -312,9 +444,6 @@ form {
 
   background-color: #f8f7f4;
   border-radius: 5px;
-  /* Удалить */
-  border: 1px solid yellow;
-  /*        */
 }
 .search-form > p > input {
   width: 311px;
@@ -326,32 +455,10 @@ form {
   font-size: 14px;
   color: #999999;
 }
-.user-item:first-child:hover .search-form::before {
-  position: absolute;
-  top: -5px;
-  left: 0;
 
-  width: 100%;
+*/
+/* Рисуем формы для userblocks 2. login
 
-  content: "";
-  border: 5px solid transparent;
-}
-/* Рисуем формы для userblocks 2. login */
-.user-item:nth-child(2):hover .user-login {
-  position: absolute;
-  top: 37px;
-  right: 0;
-
-  display: block;
-  padding: 20px 15px;
-  box-sizing: content-box;
-
-  background-color: #f8f7f4;
-  border-radius: 5px;
-  /* УДАЛИТЬ   */
-  border: 1px solid yellow;
-  /*                    */
-}
 .user-login > p > input {
   height: 44px;
   width: 311px;
@@ -361,16 +468,8 @@ form {
   font-size: 14px;
   color: #999999;
 }
-.user-item:nth-child(2):hover .user-login ::before {
-  position: absolute;
-  top: -5px;
-  left: 0;
-  width: 100%;
-
-  content: "";
-  border: 5px solid transparent;
-}
-/* Рисуем формы для userblocks 3. basket */
+*/
+/* Рисуем формы для userblocks 3. basket
 .user-item:last-child:hover .basket-form {
   position: absolute;
   top: 37px;
@@ -384,18 +483,7 @@ form {
 
   background-color: #f8f7f4;
   border-radius: 5px;
-  /* УДАЛИТЬЬ */
-  border: 1px solid yellow;
-  /*                  */
-}
-.user-item:last-child:hover .basket-form::before {
-  position: absolute;
-  top: -5px;
-  left: 0;
-  width: 100%;
 
-  content: "";
-  border: 5px solid transparent;
 }
 .basket-row {
   display: flex;
@@ -440,6 +528,7 @@ form {
 .basket-form > button {
   align-self: flex-end;
 }
+*/
 /* обработка при наведении на юзерские элементы*/
 .user-item:hover > span {
   color: #323232;
@@ -974,10 +1063,6 @@ article.ice-item:hover .link-button {
 }
 
 /* Тень меню и форм */
-.nav-catalog-list,
-.basket-form,
-.user-login,
-.search-form,
 article.ice-item:hover::before {
   box-shadow: 0px 20px 20px 0 rgba(0, 0, 0, 0.4);
   z-index: 10;
