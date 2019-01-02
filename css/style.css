@@ -82,15 +82,29 @@ input {
   padding-left: 15px;
   line-height: 44px;
   min-height: 44px;
+  box-sizing: border-box;
   font-family: "Roboto-Regular", "Arial", sans-serif;
   font-size: 16px;
-  color: #999999;
+  color: #323232;
   background-color: #ffffff;
   border-radius: 5px;
   border-style: solid;
   border-color: #d3d3d2;
   border-width: 1px;
 }
+input::placeholder {
+  color: #999999;
+}
+input:focus {
+  box-sizing: unset;
+  outline-style: none;
+  border: 2px solid rgba(46, 136, 228, 0.52);
+}
+input:hover:not(:focus) {
+  box-sizing: border-box;
+  border: 2px solid rgba(154, 154, 154, 0.52);
+}
+
 
 /*  header */
 .header {
