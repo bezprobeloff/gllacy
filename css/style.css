@@ -52,6 +52,9 @@ a {
 .visually-hidden {
   display: none;
 }
+
+
+
 /* КНОПКА ОБЩАЯ*/
 .button {
   font-family: "Roboto-Bold", "Arial", sans-serif;
@@ -80,7 +83,6 @@ form {
 input {
   padding-right: 15px;
   padding-left: 15px;
-  line-height: 44px;
   min-height: 44px;
   box-sizing: border-box;
   font-family: "Roboto-Regular", "Arial", sans-serif;
@@ -91,13 +93,13 @@ input {
   border-style: solid;
   border-color: #d3d3d2;
   border-width: 1px;
+  outline-style: none;
 }
 input::placeholder {
   color: #999999;
 }
 input:focus {
-  box-sizing: unset;
-  outline-style: none;
+  min-height: 44px;
   border: 2px solid rgba(46, 136, 228, 0.52);
 }
 input:hover:not(:focus) {
@@ -443,106 +445,6 @@ input:hover:not(:focus) {
   color: #fefefe;
 }
 
-
-
-
-/* Рисуем формы для userblocks 1. search
-.user-item:first-child:hover .search-form {
-  position: absolute;
-  top: 37px;
-  right: 0;
-
-  display: block;
-  padding: 20px 15px;
-  box-sizing: content-box;
-
-  background-color: #f8f7f4;
-  border-radius: 5px;
-}
-.search-form > p > input {
-  width: 311px;
-  height: 44px;
-  padding: 15px;
-  line-height: 44px;
-
-  font-family: "Roboto-Regular", "Arial", sans-serif;;
-  font-size: 14px;
-  color: #999999;
-}
-
-*/
-/* Рисуем формы для userblocks 2. login
-
-.user-login > p > input {
-  height: 44px;
-  width: 311px;
-  padding: 15px;
-  line-height: 44px;
-
-  font-size: 14px;
-  color: #999999;
-}
-*/
-/* Рисуем формы для userblocks 3. basket
-.user-item:last-child:hover .basket-form {
-  position: absolute;
-  top: 37px;
-  right: 0;
-
-  display: flex;
-  flex-direction: column;
-
-  padding: 20px 15px;
-  box-sizing: border-box;
-
-  background-color: #f8f7f4;
-  border-radius: 5px;
-
-}
-.basket-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 539px;
-  list-style: none;
-}
-.basket-cell {
-  box-sizing: border-box;
-  border: 1px solid black;
-}
-.basket-cell:first-child  {
-  height: 11px;
-  width: 11px;
-  margin-right: 9px;
-  box-sizing: border-box;
-}
-.basket-cell:first-child > button {
-  height: 11px;
-  width: 11px;
-  box-sizing: border-box;
-}
-.basket-cell:nth-child(2) {
-  margin-right: 14px;
-}
-.basket-cell:nth-child(2) > img {
-  height: 33px;
-  width: 33px;
-}
-.basket-cell:nth-child(3) {
-  width: 233px;
-  padding-right: 14px;
-
-  font-family: "Roboto-Regular", "Arial", sans-serif;
-  font-size: 13px;
-  color: #323232;
-}
-.basket-form > p {
-  text-align: right;
-}
-.basket-form > button {
-  align-self: flex-end;
-}
-*/
 /* обработка при наведении на юзерские элементы*/
 .user-item:hover > span {
   color: #323232;
@@ -679,30 +581,11 @@ h3.new-subject {
 /*  Оформление секшона рассылка*/
 .subscribe {
   flex-basis: 50%;
-  /*
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex-basis: 50%;
-  */
-
-
-  box-sizing: border-box;
-  /*
-  padding: 37px 27px;
-  background-color: #f8f7f4;
-  border-radius: 10px;
-  border-style: solid;
-  border-image-width: 6px;
-  border-image-source: url(../img/post-bg.svg);
-  border-image-slice: 6;
-  border-image-repeat: no-repeat;
-  */
   padding: 6px;
+  box-sizing: border-box;
   background-image: url(../img/post-bg.svg);
   background-repeat: no-repeat;
   border-radius: 10px;
-
 }
 .subscribe > .container {
   display: flex;
@@ -722,9 +605,6 @@ h3.new-subject {
 .subscribe span {
   display: flex;
   justify-content: space-between;
-  /*   Удалить
-  border: 1px solid firebrick;
-            */
 }
 input.email-subscribe {
   flex-grow: 1;
@@ -744,9 +624,6 @@ input.email-subscribe {
 /*  Оформление карыт адресов*/
 .map-address {
   position: relative;
-  /*
-  margin-bottom: 18px;
-  */
 }
 
 .map-address > img {
@@ -777,9 +654,6 @@ input.email-subscribe {
   align-items: center;
   padding-top: 18px;
   padding-bottom: 25px;
-  /* Удалить
-  border: #5a5a5a 1px solid;
-         */
 }
 /*  социалка */
 .social-list {
@@ -787,9 +661,6 @@ input.email-subscribe {
   align-items: center;
   min-height: 38px;
   list-style: none;
-  /* Удалить
-  border: #f26843 1px solid;
-               */
 }
 .social-item {
   display: flex;
@@ -833,18 +704,12 @@ input.email-subscribe {
   display: flex;
   flex-wrap: wrap;
   box-sizing: border-box;
-  /*Удалить
-  border: 1px blueviolet solid;
-          */
 }
 .doc-item {
   display: flex;
   flex-basis: 50%;
   box-sizing: border-box;
   position: relative;
-  /*Удалить
-  border: 1px lightgreen solid;
-       */
 }
 .doc-item:first-child,
 .doc-item:nth-child(2) {
@@ -856,18 +721,6 @@ input.email-subscribe {
   font-size: 13px;
   line-height: 13px;
 }
-/* Вставляем подчеркивание
-.doc-item a::before {
-  position: absolute;
-  left: 0px;
-  bottom: -2px;
-
-  width: 100%;
-
-  content: "";
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-*/
 .doc-item:first-child > a {
   font-family: "Roboto-Bold", "Arial", sans-serif;
 }
@@ -899,34 +752,16 @@ input.email-subscribe {
   font-size: 12px;
   color: #fefefe;
 }
-/* Вставляем подчеркивание
-.copyright a::before {
-  position: absolute;
-  left: 0px;
-  bottom: -1px;
-
-  width: 100%;
-
-  content: "";
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-*/
 /* страница каталога */
 /* хлебные крошки */
 .breadcrumbs {
   display: flex;
   align-items: center;
-  /*Удалить
-  border: 1px solid goldenrod;
-         */
 }
 .breadcrumb-list {
   display: flex;
   align-items: center;
   list-style: none;
-  /*Удалить
-  border: 1px solid khaki;
-          */
 }
 .breadcrumb-item {
   position: relative;
@@ -934,27 +769,13 @@ input.email-subscribe {
   align-items: center;
   margin-right: 20px;
   min-height: 14px;
-  /*Удалить
-  border: 1px solid rebeccapurple;
-        */
 }
 .breadcrumb-item > a {
   position: relative;
   font-size: 14px;
   line-height: 14px;
 }
-/* Вставляем подчеркивание
-.breadcrumb-item a::before {
-  position: absolute;
-  left: 0px;
-  bottom: -0px;
 
-  width: 100%;
-
-  content: "";
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-*/
 /* Вставляем символ » */
 .breadcrumb-item:not(:last-child)::after {
   position: absolute;
@@ -978,10 +799,6 @@ article.ice-creams-list {
 
   justify-content: space-between;
   box-sizing: border-box;
-  /* УАДИЛТЬ */
-  border: 1px solid black;
-  /*            */
-
 }
 /* Элемент товара */
 article.ice-item {
@@ -993,15 +810,9 @@ article.ice-item {
   padding-top: 6px;
   margin-bottom: 40px;
   box-sizing: border-box;
-  /* УАДИЛТЬ
-  border: 1px solid powderblue;
-           */
 }
 article.ice-item > img {
   margin: 0 auto;
-  /*
-  margin-bottom: 16px;
-  */
   width: 267px;
   height: 267px;
 
@@ -1130,5 +941,15 @@ article.ice-item:hover::before {
   background-image: linear-gradient(to bottom, #e74a35, #f26843), linear-gradient(to bottom, rgba(0, 0, 0, 0.07), rgba(0, 0, 0, 0.07));
 }
 
-
+/* Стилизация общей ссылки */
+.nav-item > a,
+.news > a,
+.doc-item > a,
+.copyright a,
+.breadcrumb-item > a,
+.desc-ice > a {
+  border-bottom-width: 2px;
+  border-bottom-style: dashed;
+  border-bottom-color: #942718;
+}
 
