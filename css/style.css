@@ -55,6 +55,40 @@ a {
 
 
 
+/* Стилизация подчеркивания для ссылки */
+.doc-item > a,
+.copyright a,
+.breadcrumb-item > a,
+.desc-ice > a {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+/* Стилизация подчеркивания для ссылки при наведении */
+.doc-item > a:hover,
+.copyright a:hover,
+.breadcrumb-item > a:hover,
+.desc-ice > a:hover,
+.doc-item > a:active,
+.copyright a:active,
+.breadcrumb-item > a:active,
+.desc-ice > a:active {
+  color: #ffbc9e;
+  border-bottom: 1px solid rgba(255, 188, 158, 0.3);
+}
+/* Стилизация подчеркивания для ссылки навигации */
+.nav-item:not(.current) > a {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+/* Стилизация подчеркивания для ссылки на белом фоне */
+.reg-item > a {
+  border-bottom: 1px solid rgba(50, 50, 50, 0.2);
+}
+/* Стилизация подчеркивания для ссылки при наведении на белом фоне */
+.reg-item > a:hover,
+.reg-item > a:active {
+  color: #e84d37;
+  border-bottom: 1px solid rgba(232, 77, 55, 0.2);
+}
+
 /* КНОПКА ОБЩАЯ*/
 .button {
   font-family: "Roboto-Bold", "Arial", sans-serif;
@@ -131,33 +165,35 @@ input:hover:not(:focus) {
   display: flex;
   align-items: center;
 
-  min-height: 32px;
+
   list-style: none;
 }
 /* Элемент списка */
 .nav-item {
   position: relative;
-
+  min-height: 32px;
+  /* Временое закрыл
   display: flex;
   align-items: center;
+  */
+  padding-left: 13px;
+  padding-right: 13px;
 }
 /* Оформление заголовка элемента навигации */
 .nav-item > a {
   position: relative;
 
-  padding-left: 13px;
-  padding-right: 13px;
   line-height: 32px;
-
   font-family: "Roboto-Bold", "Arial", sans-serif;
   font-size: 16px;
 }
 /* Текущая страница */
-.nav-item.current > a {
+.nav-item.current {
   background-color: #d07058;
   border-radius: 16px;
 }
 
+/* ОСТОРОЖНО!!!!!!!
 .nav-item:not(.current) > a::before {
   position: absolute;
   left: 13px;
@@ -168,13 +204,24 @@ input:hover:not(:focus) {
   content: "";
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
-
+*/
 /* При наведении на элемент навигации */
+/* СТАРАЯ ВЕРСИЯ ОСТОРОЖНО!!!!
 .nav-item:hover > a {
   color: #333333;
   border-radius: 16px;
 
   background-color: #f7f6f3;
+}
+
+*/
+.nav-item:not(.current):hover {
+  border-radius: 16px;
+  background-color: #f7f6f3;
+}
+.nav-item:not(.current):hover > a {
+  color: #333333;
+  border-bottom: none;
 }
 /* Прячем по умолчанию подменю навигации */
 .nav-catalog-list {
@@ -367,7 +414,9 @@ input:hover:not(:focus) {
   font-family: "Roboto-Regular", "Arial", sans-serif;
   font-size: 13px;
   color: #323232;
+  /*
   border-bottom: 1px solid #323232;
+  */
 }
 /* Рисуем формы для корзины */
 .basket {
@@ -703,13 +752,18 @@ input.email-subscribe {
 .docs-list {
   display: flex;
   flex-wrap: wrap;
+  width: 328px;
   box-sizing: border-box;
 }
 .doc-item {
-  display: flex;
-  flex-basis: 50%;
-  box-sizing: border-box;
   position: relative;
+  /*
+  display: flex;
+  */
+  flex-basis: 50%;
+  min-height: 13px;
+  box-sizing: border-box;
+  border: 1px solid saddlebrown;
 }
 .doc-item:first-child,
 .doc-item:nth-child(2) {
@@ -894,7 +948,7 @@ article.ice-item:hover::before {
 }
 
 /* Нажатие на Каталог */
-.nav-item:active > a {
+.nav-item:active {
   box-shadow: inset 0px 2px 1px 0 #696969;
   background-color: #ededed;
 }
@@ -907,28 +961,6 @@ article.ice-item:hover::before {
   color: #ffffff;
   background-color: #d07058;
 }
-/* подчеркиваем ссылку */
-.doc-item  a,
-.copyright a,
-.breadcrumb-item a,
-.desc-ice a {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-/* Стилизация ссылок*/
-.doc-item:hover > a,
-.doc-item:hover > a::before,
-.copyright a:hover,
-.copyright a:hover::before,
-.breadcrumb-item:hover > a,
-.breadcrumb-item:hover > a::before,
-.doc-item:active > a,
-.copyright a:active,
-.breadcrumb-item:active > a {
-  color: #ffbc9e;
-  border-color: #ffbc9e;
-}
-
 
 .button:hover,
 .link-button:hover {
@@ -941,15 +973,5 @@ article.ice-item:hover::before {
   background-image: linear-gradient(to bottom, #e74a35, #f26843), linear-gradient(to bottom, rgba(0, 0, 0, 0.07), rgba(0, 0, 0, 0.07));
 }
 
-/* Стилизация общей ссылки */
-.nav-item > a,
-.news > a,
-.doc-item > a,
-.copyright a,
-.breadcrumb-item > a,
-.desc-ice > a {
-  border-bottom-width: 2px;
-  border-bottom-style: dashed;
-  border-bottom-color: #942718;
-}
+
 
