@@ -716,6 +716,22 @@ input.email-subscribe {
   font-size: 18px;
   color: #323232;
 }
+.feedback-form .address-text {
+  width: 148px;
+
+}
+.feedback-form .address {
+  display: block;
+  padding-bottom: 23px;
+}
+.feedback-form .call-text {
+  display: block;
+}
+.feedback-form .call-number {
+}
+.feedback-form .work-time {
+  padding-bottom: 26px;
+}
 .feedback-form .button {
   height: 44px;
   width: 100%;
