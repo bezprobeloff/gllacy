@@ -240,6 +240,7 @@ input:hover:not(:focus) {
 
   background-color: #f8f7f4;
   border-radius: 5px;
+  z-index: 20;
 }
 /* Элемент подменю */
 .nav-catalog-item {
@@ -696,6 +697,33 @@ input.email-subscribe {
   background-image: url(../img/pin-icon.svg);
   background-repeat: no-repeat;
 }
+.feedback-form {
+  position: absolute;
+  top: 63px;
+  right: 27px;
+  display: block;
+  width: 302px;
+  padding: 32px 25px;
+  box-sizing: border-box;
+}
+.feedback-form p {
+  font-family: "Roboto-Regular", "Arial", sans-serif;
+  font-size: 14px;
+  color: #323232;
+}
+.feedback-form span {
+  font-family: "Roboto-Bold", "Arial", sans-serif;
+  font-size: 18px;
+  color: #323232;
+}
+.feedback-form .button {
+  height: 44px;
+  width: 100%;
+  border-radius: 22px;
+  font-family: "Roboto-Bold", "Arial", sans-serif;
+  font-size: 18px;
+  color: #fefefe;
+}
 /* footer */
 .footer {
   display: flex;
@@ -751,24 +779,30 @@ input.email-subscribe {
 /*  правовая информация*/
 .docs-list {
   display: flex;
+
   flex-wrap: wrap;
+  width: 330px;
+  /*
   width: 328px;
+  */
   box-sizing: border-box;
 }
 .doc-item {
   position: relative;
-  /*
-  display: flex;
-  */
+
   flex-basis: 50%;
   min-height: 13px;
   box-sizing: border-box;
-  border: 1px solid saddlebrown;
 }
 .doc-item:first-child,
 .doc-item:nth-child(2) {
   margin-bottom: 9px;
 }
+.doc-item:first-child,
+.doc-item:nth-child(3) {
+  padding-right: 10px;
+}
+
 .doc-item > a {
   position: relative;
   font-family: "Roboto-Regular", "Arial", sans-serif;
@@ -906,6 +940,7 @@ article.ice-item .unit::before {
   font-size: 16px;
   line-height: 22px;
   text-align: center;
+  z-index: 11;
 }
 .desc-ice a {
 
