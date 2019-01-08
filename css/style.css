@@ -37,21 +37,12 @@ body {
   color: #ffffff;
   background-color: #849d8f;
 }
-/*
-body .map-address,
-body header,
-body main,
-body footer {
-  width: 1200px;
-  margin: 0 auto;
-  box-sizing: border-box;
-  border: 1px solid red;
-}
-*/
+
 .header,
 .main,
 .footer,
-.slider {
+.slider,
+.sales {
   margin-left: 27px;
   margin-right: 27px;
 }
@@ -559,6 +550,7 @@ p.call-number {
   padding-top: 324px;
 
   text-align: center;
+  margin-bottom: 40px;
 }
 input[type="radio"] {
   display: none;
@@ -573,6 +565,7 @@ input[type="radio"] {
   line-height: 60px;
 }
 .slider .button {
+  display: inline-block;
   padding: 12px 44px;
 
   font-family: "Roboto-Bold", "Arial", sans-serif;
@@ -637,9 +630,6 @@ input[type="radio"] {
   background-color: #9d8b84;
   background-image: url("../img/slider-item3.png");
 }
-#product-3:checked body {
-  background-color: #9d8b84;
-}
 
 #product-1:checked ~ .site-wrapper .slide1,
 #product-2:checked ~ .site-wrapper .slide2,
@@ -652,22 +642,70 @@ input[type="radio"] {
 #product-3:checked ~ .site-wrapper label[for="product-3"] {
   background-color: #ffffff;
 }
-
-
-
-/*
 .slider {
-  min-width: 940px;
-  background-color: #849d8f;
-  background-image: url("../img/slider-item1.png");
+  border: 1px solid red;
+}
+/* оформляем sales*/
+.sales {
+  margin-bottom: 40px;
+}
+.sales .sale-list {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.sale-item {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 560px;
+  height: 229px;
+  box-sizing: border-box;
+
+  border: 1px solid gold;
+  border-radius: 15px;
+  background-image: url("../img/raspberry-free-bg.jpg");
   background-repeat: no-repeat;
-  background-position: top center;
-
-  transition: background-image 0.5s ease, background-color 0.5s ease;
-
+  background-size: cover;
 
 }
-*/
+.sale-item:nth-child(2) {
+  background-image: url("../img/chocolate-free-bg.jpg");
+}
+
+.sale-item h3,
+.sale-item p {
+  display: inline-block;
+  font-family: "Roboto-Bold", "Arial", sans-serif;
+  font-size: 35px;
+  line-height: 41px;
+  text-align: left;
+  color: #ffffff;
+  border: 1px solid powderblue;
+}
+.sale-item h3 {
+  margin-bottom: 20px;
+}
+.sale-item p {
+  font-size: 18px;
+  line-height: 22px;
+  min-height: 85px;
+}
+.sale-item .button {
+  align-self: flex-end;
+  box-sizing: border-box;
+  padding: 14px 22px;
+
+
+  min-height: 46px;
+
+  font-size: 18px;
+  line-height: 24px;
+  text-align: right;
+
+  border-radius: 23px;
+
+}
 
 /* Оформляем main */
 .main {
@@ -677,7 +715,7 @@ input[type="radio"] {
   padding: 29px 20px;
   padding-bottom: 16px;
   border-radius: 15px;
-  background:  url(../img/features-bg.jpg) no-repeat bisque;
+  background:  url("../img/features-bg.jpg") no-repeat bisque;
   background-size: cover;
 }
 .features h2 {
