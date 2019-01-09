@@ -566,7 +566,7 @@ p.call-number {
   text-align: center;
   margin-bottom: 40px;
 }
-input[type="radio"] {
+body > input[type="radio"] {
   display: none;
 }
 .slide-title {
@@ -1113,6 +1113,7 @@ h2.main-title {
   font-family: "Roboto-Bold";
   font-size: 35px;
 }
+/* ФИЛЬТРАЦИЯ
 .form-filter {
   display: block;
   min-height: 150px;
@@ -1193,6 +1194,36 @@ h2.main-title {
 
 .max-price {
   text-align: right;
+}
+*/
+/* ФИЛЬТРАЦИЯ */
+.form-filter {
+  display: flex;
+
+}
+.fat-list,
+.additive-list {
+  display: flex;
+}
+.fat-list li,
+.additive-list li {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  border: 1px solid rebeccapurple;
+}
+.fat-list input {
+
+  width: 40px;
+}
+.fat-list label {
+
+  line-height: 40px;
+  width: 150px;
+}
+.fat-list p {
+  display: flex;
+
 }
 /* сортировка по сетке элементов товара */
 /* Список товаров */
