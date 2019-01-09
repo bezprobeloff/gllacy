@@ -19,6 +19,12 @@
   font-weight: normal;
   font-style: normal;
 }
+@keyframes bounce {
+  0% { transform: translateY(-2000px); }
+  70% { transform: translateY(30px); }
+  90% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+  }
 * {
   margin: 0;
   padding: 0;
@@ -60,7 +66,8 @@ a {
 .doc-item > a,
 .copyright a,
 .breadcrumb-item > a,
-.desc-ice > a {
+.desc-ice > a,
+main.catalog {
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 /* Стилизация подчеркивания для ссылки при наведении */
@@ -107,8 +114,15 @@ a {
   background-image: linear-gradient(to top, #e74a35, #f26843);
 }
 /* Стилизация общей формы*/
-form {
+.user-login,
+.search-form,
+.basket-form {
   display: none;
+}
+form:not(.form-filter){
+  /*
+  display: none;
+  */
   border-radius: 5px;
   background-color: #f8f7f4;
   box-shadow: 0px 20px 20px 0 rgba(0, 0, 0, 0.4);
@@ -391,7 +405,7 @@ input:hover:not(:focus) {
   border: 10px solid transparent;
 }
 /* Рисуем формы для userblocks 2. login */
-.user-login{
+.user-login {
   width: 277px;
 }
 .user-login input[type="email"],
@@ -861,12 +875,24 @@ input.email-subscribe {
 }
 
 .map-address > img {
+  /*
   position: relative;
   top: 0;
   left: 0px;
+  */
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: 1;
 
   width: 1200px;
   height: 430px;
+}
+.map-address iframe {
+  position: relative;
+  border: none;
+  z-index: 2;
 }
 /* Вставка указателя */
 .map-address::before {
@@ -881,14 +907,17 @@ input.email-subscribe {
   background-image: url(../img/pin-icon.svg);
   background-repeat: no-repeat;
 }
+
 .feedback-form {
   position: absolute;
   top: 63px;
   right: 27px;
-  display: block;
+  display: flex;
+  flex-direction: column;
   width: 302px;
   padding: 32px 25px;
   box-sizing: border-box;
+  z-index: 5;
 }
 .feedback-form p {
   font-family: "Roboto-Regular", "Arial", sans-serif;
@@ -916,14 +945,19 @@ input.email-subscribe {
 .feedback-form .work-time {
   padding-bottom: 26px;
 }
+
 .feedback-form .button {
-  height: 44px;
+  min-height: 44px;
   width: 100%;
   border-radius: 22px;
   font-family: "Roboto-Bold", "Arial", sans-serif;
   font-size: 18px;
+  text-align: center;
+  line-height: 44px;
   color: #fefefe;
 }
+
+
 /* footer */
 .footer {
   display: flex;
@@ -1072,12 +1106,94 @@ input.email-subscribe {
   content: "»";
   width: auto;
 }
+
 /* заголовок каталога */
 h2.main-title {
+  margin-bottom: 30px;
   font-family: "Roboto-Bold";
   font-size: 35px;
 }
+.form-filter {
+  display: block;
+  min-height: 150px;
+  border: 1px solid gold;
+}
+.range-controls {
+  position: relative;
+  height: 41px;
+  margin-bottom: 15px;
+  padding-top: 39px;
+  padding-right: 20px;
+  padding-left: 20px;
 
+  background-color: #f1f1f1;
+
+  border-radius: 5px;
+}
+
+.range-controls .scale {
+  height: 2px;
+
+  background: red;
+}
+.range-controls .bar {
+  width: 70%;
+  height: 2px;
+
+  background: #00ca74;
+}
+.range-controls .toggle {
+  position: absolute;
+  top: 31px;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  padding: 0;
+
+  border: 8px solid #ffffff;
+  background-color: #ababab;
+  box-shadow: 0 2px 1px 0 #cfcfcf;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.range-controls .toggle-min {
+  left: 18px;
+}
+
+.range-controls .toggle-max {
+  left: 160px;
+}
+
+.price-controls {
+  font-size: 0;
+}
+
+.price-controls label {
+  display: inline-block;
+  width: 50%;
+
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.price-controls input {
+  width: 60px;
+  padding: 8px 10px;
+  margin-left: 10px;
+
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 16px;
+  text-align: center;
+  color: #283136;
+
+  border: none;
+  border-radius: 5px;
+  background: #f1f1f1;
+}
+
+.max-price {
+  text-align: right;
+}
 /* сортировка по сетке элементов товара */
 /* Список товаров */
 article.ice-creams-list {
@@ -1087,6 +1203,9 @@ article.ice-creams-list {
 
   justify-content: space-between;
   box-sizing: border-box;
+  /*
+  margin-bottom: 40px;
+  */
 }
 /* Элемент товара */
 article.ice-item {
@@ -1098,6 +1217,29 @@ article.ice-item {
   padding-top: 6px;
   margin-bottom: 40px;
   box-sizing: border-box;
+  border: 1px solid red;
+}
+article.hit::after {
+  position: absolute;
+  top: 0;
+  left: 13px;
+  content: "";
+  width: 61px;
+  height: 61px;
+  background-image: url("../img/hit-icon.svg");
+  background-repeat: no-repeat;
+  background-size: 61px 61px;
+  background-color: transparent;
+  border-radius: 50%;
+  /*
+  position: relative;
+  background-image: url("../img/hit-icon.svg");
+  background-repeat: no-repeat;
+  background-size: 61px 61px;
+  background-position: 13px 0;
+  z-index: 50;
+  */
+
 }
 article.ice-item > img {
   margin: 0 auto;
@@ -1207,6 +1349,80 @@ article.ice-item:hover::before {
   box-shadow: inset 0px 2px 2px 0 #942718;
   background-image: linear-gradient(to bottom, #e74a35, #f26843), linear-gradient(to bottom, rgba(0, 0, 0, 0.07), rgba(0, 0, 0, 0.07));
 }
+
+.modal {
+  position: fixed;
+  display: none;
+}
+.modal-show {
+  display: block;
+  animation-name: bounce;
+  animation-duration: 0.6s;
+}
+.modal-feedback {
+  top: 337px;
+  left: 50%;
+  margin-left: -239px;
+}
+.feedback-modal-form {
+  display: flex;
+  flex-direction: column;
+  width: 478px;
+  padding: 25px;
+  padding-top: 20px;
+  padding-bottom: 27px;
+}
+.feedback-modal-form h2 {
+  margin-bottom: 24px;
+  font-family: "Roboto-Medium", "Arial", sans-serif;
+  font-size: 24px;
+  line-height: 28px;
+  color: #323232;
+}
+.feedback-modal-form p {
+  margin-bottom: 20px;
+}
+.feedback-modal-form input {
+  width: 267px;
+}
+.feedback-modal-form .feedback-textarea {
+  width: 100%;
+  height: 155px;
+}
+.feedback-modal-form p:last-child {
+  margin-bottom: 25px;
+}
+.feedback-modal-form .button {
+  align-self: flex-end;
+  height: 44px;
+  /*
+  padding: 14px 24px;
+  */
+  padding-right: 24px;
+  padding-left: 24px;
+  border-radius: 22px;
+
+  font-family: "Roboto-Bold", "Arial", sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  vertical-align: middle;
+  color: #fefefe;
+}
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 17px;
+  width: 18px;
+  height: 17px;
+  font-size: 0;
+  background-image: url("../img/cross-big-icon.svg");
+  background-size: 18px 17px;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 
 
 

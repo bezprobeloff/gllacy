@@ -76,7 +76,7 @@
     <p  class="call-number">8 812 450-25-25</p >
   </section>
 </header>
-<main class="main">
+<main class="main catalog">
   <nav class="breadcrumbs">
     <ul class="breadcrumb-list">
       <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
@@ -86,6 +86,42 @@
   </nav>
   <h1 class="visually-hidden">Интернет-магазин продажи мороженого "Глейси"</h1>
   <h2 class="main-title">Сливочное мороженое</h2>
+  <form class="form-filter" method="get" action="https://echo.htmlacademy.ru">
+    <fieldset class="filter">
+      <div class="two-third-width">
+        <label for="food">Сортировка:</label>
+        <select id="food" name="food">
+          <option value="meat">Мясо</option>
+          <option value="fish">Рыба</option>
+          <option value="chi">Курочка</option>
+          <option value="ind">Индейка</option>
+          <option value="mice">Мыши</option>
+          <option value="milk">Молоко</option>
+          <option value="kef">Кефир</option>
+          <option value="water">Вода</option>
+          <option value="smet">Сметана</option>
+        </select>
+      </div>
+    </fieldset>
+    <fieldset class="filter"><legend>Цена: 100 руб. – 500 руб.</legend>
+      <div class="range-controls">
+        <div class="scale">
+          <div class="bar"></div>
+        </div>
+        <div class="toggle toggle-min"></div>
+        <div class="toggle toggle-max"></div>
+      </div>
+      <div class="price-controls">
+
+        <label class="min-price">от <input name="min-price" type="text" value="0"></label>
+        <label class="max-price">до <input name="max-price" type="text" value="15000"></label>
+      </div>
+    </fieldset>
+    <fieldset class="filter"><legend>Жирность:</legend>
+    </fieldset>
+    <fieldset class="filter"><legend>Наполнители:</legend>
+    </fieldset>
+  </form>
   <article class="ice-creams-list">
       <article class="ice-item"><img src="img/ice-orange-img.jpg" width="267px" height="267px" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
         <p class="price">310<span class="visually-hidden">₽</span><span class="unit">/кг</span></p>

@@ -122,7 +122,7 @@
   </ul>
 </article>
 <article class="ice-creams-list">
-  <article class="ice-item"><img src="img/ice-orange-img.jpg" width="267px" height="267px" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
+  <article class="ice-item hit"><img src="img/ice-orange-img.jpg" width="267px" height="267px" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
     <p class="price">310<span class="visually-hidden">₽</span><span class="unit">/кг</span></p>
     <span class="desc-ice"><a href="#">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>
     </span>
@@ -130,7 +130,7 @@
       <a class="link-button quick-view" href="#">Быстрый просмотр</a>
     </div>
   </article>
-  <article class="ice-item"><img src="img/ice-coffee-img.jpg" width="267px" height="267px" alt="Сливочно-кофейное с кусочками шоколада">
+  <article class="ice-item hit"><img src="img/ice-coffee-img.jpg" width="267px" height="267px" alt="Сливочно-кофейное с кусочками шоколада">
     <p class="price">380<span class="visually-hidden">₽</span><span class="unit">/кг</span></p>
     <span class="desc-ice"><a href="#">Сливочно-кофейное с кусочками шоколада</a>
     </span>
@@ -138,7 +138,7 @@
       <a class="link-button quick-view" href="#">Быстрый просмотр</a>
     </div>
     </article>
-  <article class="ice-item"><img src="img/ice-strawberry-img.jpg" width="267px" height="267px" alt="Сливочно-клубничное с присыпкой из белого шоколада">
+  <article class="ice-item hit"><img src="img/ice-strawberry-img.jpg" width="267px" height="267px" alt="Сливочно-клубничное с присыпкой из белого шоколада">
     <p class="price">355<span class="visually-hidden">₽</span><span class="unit">/кг</span></p>
     <span class="desc-ice"><a href="#">Сливочно-клубничное с присыпкой из белого шоколада</a>
     </span>
@@ -146,7 +146,7 @@
       <a class="link-button quick-view" href="#">Быстрый просмотр</a>
     </div>
     </article>
-  <article class="ice-item"><img src="img/ice-creme-brulee-img.jpg" width="267px" height="267px" alt="Сливочное крем-брюле с карамельной подливкой">
+  <article class="ice-item hit"><img src="img/ice-creme-brulee-img.jpg" width="267px" height="267px" alt="Сливочное крем-брюле с карамельной подливкой">
     <p class="price">415<span class="visually-hidden">₽</span><span class="unit">/кг</span></p>
     <span class="desc-ice"><a href="#">Сливочное крем-брюле с карамельной подливкой</a>
     </span>
@@ -184,6 +184,7 @@
   </section>
 </main>
 <section class="map-address">
+    <iframe src="https://yandex.ru/map-widget/v1/-/CBR6jPHncA" width="1200px" height="430" frameborder="1" allowfullscreen="true"></iframe>
     <img src="img/map-address-img.jpg" width="1200px" height="430px" alt="Адрес офиса и магазина: ул. Большая Конюшенная 19/8, Санкт-Петербург">
     <form class="feedback-form" action="https://echo.htmlacademy.ru" method="post">
       <p class="address-text">Адрес главного офиса и офлайн-магазина:</p>
@@ -191,7 +192,7 @@
       <p class="call-text">Для заказов по телефону:</p>
       <span class="call-number">8 812 450-25-25</span>
       <p class="work-time">(с 10 до 20 ежедневно)</p>
-      <button class="button" type="button">Форма обратной связи</button>
+      <a class="button open-modal">Форма обратной связи</a>
     </form>
 </section>
 <footer class="footer">
@@ -214,5 +215,26 @@
   </section>
 </footer>
 </div>
+<section class="modal modal-feedback">
+    <button class="modal-close" type="button">Закрыть</button>
+  <form class="feedback-modal-form" action="https://echo.htmlacademy.ru" method="post">
+    <h2>Мы обязательно вам ответим!</h2>
+    <p>
+      <label class="visually-hidden" for="user-name">Ваше имя</label>
+      <input class="user-name" id="user-name" type="text" name="user-name" placeholder="Как вас зовут?">
+    </p>
+    <p>
+      <label class="visually-hidden" for="user-email">Ваша почта</label>
+      <input class="user-email" id="user-email" type="email" name="user-email" placeholder="Ваша почта для ответа?">
+    </p>
+    <p>
+      <label class="visually-hidden" for="feedback-textarea">Ваша почта</label>
+      <input class="feedback-textarea" id="feedback-textarea" type="text" name="feedback-textarea" placeholder="Напишите что-нибудь...">
+    </p>
+    <button class="button" type="submit">Отправить</button>
+
+  </form>
+</section>
+<script src="js/popup.js"></script>
 </body>
 </html>
