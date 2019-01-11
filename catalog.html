@@ -86,81 +86,89 @@
   </nav>
   <h1 class="visually-hidden">Интернет-магазин продажи мороженого "Глейси"</h1>
   <h2 class="main-title">Сливочное мороженое</h2>
-  <form class="form-filter" method="get" action="https://echo.htmlacademy.ru">
-    <fieldset class="filter"><legend>Сортировка:</legend>
-      <label for="food">Сортировка:</label>
-      <select id="food" name="food">
-          <option value="meat">Мясо</option>
-          <option value="fish">Рыба</option>
-          <option value="chi">Курочка</option>
-          <option value="ind">Индейка</option>
-          <option value="mice">Мыши</option>
-          <option value="milk">Молоко</option>
-          <option value="kef">Кефир</option>
-          <option value="water">Вода</option>
-          <option value="smet">Сметана</option>
+  <section class="filters">
+    <div class="filter-item">
+      <span class="filter-legend">Сортировка:</span>
+      <div class="filter-control">
+        <label class="visually-hidden" for="sort">Сортировка:</label>
+        <select id="sort" name="sort">
+          <option value="top">по популярности</option>
+          <option value="min-price">по мин цене</option>
         </select>
-    </fieldset>
-    <fieldset class="filter visually-hidden"><legend>Цена: 100 руб. – 500 руб.</legend>
-      <div class="range-controls">
+      </div>
+    </div>
+    <div class="filter-item">
+      <div class="price-controls">
+        <label class="min-price-label"><input name="min-price" type="text" value="0"></label>
+        <label class="max-price-label"><input name="max-price" type="text" value="15000"></label>
+      </div>
+      <span class="filter-legend">Цена: <span class="min-price">100</span> руб. – <span class="max-price">500</span> руб.</span>
+      <div class="filter-control ranges">
         <div class="scale">
           <div class="bar"></div>
+          <div class="toggle toggle-min"></div>
+          <div class="toggle toggle-max"></div>
         </div>
-        <div class="toggle toggle-min"></div>
-        <div class="toggle toggle-max"></div>
       </div>
-      <div class="price-controls">
-
-        <label class="min-price">от <input name="min-price" type="text" value="0"></label>
-        <label class="max-price">до <input name="max-price" type="text" value="15000"></label>
+    </div>
+    <div class="filter-item">
+      <span class="filter-legend">Жирность:</span>
+      <div class="filter-control-list">
+      <div class="filter-control">
+        <input type="radio" name="fat-radio" id="fat-radio-1">
+        <label class="fat-perc" for="fat-radio-1">0%</label>
+        <span class="filter-desc">0%</span>
       </div>
-    </fieldset>
-    <fieldset class="filter"><legend>Жирность:</legend>
-      <ul class="fat-list">
-        <li class="fat-item">
-          <input type="radio" name="fat-radio" id="fat-radio">
-          <label class="fat-perc" for="fat-radio">0%</label>
-        </li>
-
-        <li class="fat-item">
-          <input type="radio" name="fat-radio" id="fat-radio">
-          <label class="fat-perc" for="fat-radio">до 10%</label>
-        </li>
-        <li class="fat-item">
-          <input type="radio" name="fat-radio" id="fat-radio">
-          <label class="fat-perc" for="fat-radio">до 30%</label>
-        </li>
-        <li class="fat-item">
-          <input type="radio" name="fat-radio" id="fat-radio">
-          <label class="fat-perc" for="fat-radio">выше 30%</label>
-        </li>
-      </ul>
-    </fieldset>
-    <fieldset class="filter"><legend>Наполнители:</legend>
-      <ul class="additive-list">
-        <li class="additive-item">
-          <input type="checkbox" name="additive-checkbox" id="additive-checkbox">
-          <label class="additive" for="additive-checkbox">шоколадные</label>
-        </li>
-        <li class="additive-item">
-          <input type="checkbox" name="additive-checkbox" id="additive-checkbox">
-          <label class="additive" for="additive-checkbox">сахарные присыпки</label>
-        </li>
-        <li class="additive-item">
-          <input type="checkbox" name="additive-checkbox" id="additive-checkbox">
-          <label class="additive" for="additive-checkbox">фрукты</label>
-        </li>
-        <li class="additive-item">
-          <input type="checkbox" name="additive-checkbox" id="additive-checkbox">
-          <label class="additive" for="additive-checkbox">сиропы</label>
-        </li>
-        <li class="additive-item">
-            <input type="checkbox" name="additive-checkbox" id="additive-checkbox">
-            <label class="additive" for="additive-checkbox">джемы</label>
-          </li>
-      </ul>
-    </fieldset>
-  </form>
+      <div class="filter-control">
+        <input type="radio" name="fat-radio" id="fat-radio-2">
+        <label class="fat-perc" for="fat-radio-2">до 10%</label>
+        <span class="filter-desc">до 10%</span>
+      </div>
+      <div class="filter-control">
+        <input type="radio" name="fat-radio" id="fat-radio-3">
+        <label class="fat-perc" for="fat-radio-3">до 30%</label>
+        <span class="filter-desc">до 30%</span>
+      </div>
+      <div class="filter-control">
+        <input type="radio" name="fat-radio" id="fat-radio-4">
+        <label class="fat-perc" for="fat-radio-4">выше 30%</label>
+        <span class="filter-desc">выше 30%</span>
+      </div>
+    </div>
+    </div>
+      <div class="filter-item">
+        <span class="filter-legend">Наполнители:</span>
+        <div class="filter-control-list">
+        <div class="filter-control">
+          <input type="checkbox" name="additive-checkbox" id="additive-checkbox1">
+          <label class="additive" for="additive-checkbox1">шоколадные</label>
+          <span class="filter-desc">шоколадные</span>
+        </div>
+        <div class="filter-control">
+          <input type="checkbox" name="additive-checkbox" id="additive-checkbox2">
+          <label class="additive" for="additive-checkbox2">сахарные присыпки</label>
+          <span class="filter-desc">сахарные присыпки</span>
+        </div>
+        <div class="filter-control">
+          <input type="checkbox" name="additive-checkbox" id="additive-checkbox3">
+          <label class="additive" for="additive-checkbox3">фрукты</label>
+          <span class="filter-desc">фрукты</span>
+        </div>
+        <div class="filter-control">
+          <input type="checkbox" name="additive-checkbox" id="additive-checkbox4">
+          <label class="additive" for="additive-checkbox4">сиропы</label>
+          <span class="filter-desc">сиропы</span>
+        </div>
+        <div class="filter-control">
+          <input type="checkbox" name="additive-checkbox" id="additive-checkbox5">
+          <label class="additive" for="additive-checkbox5">джемы</label>
+          <span class="filter-desc">джемы</span>
+        </div>
+        </div>
+      </div>
+    </div>
+    <button class="button-filter" type="submit">Применить</button>
+  </section>
   <article class="ice-creams-list">
       <article class="ice-item"><img src="img/ice-orange-img.jpg" width="267px" height="267px" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
         <p class="price">310<span class="visually-hidden">₽</span><span class="unit">/кг</span></p>

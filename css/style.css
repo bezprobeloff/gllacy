@@ -1113,118 +1113,196 @@ h2.main-title {
   font-family: "Roboto-Bold";
   font-size: 35px;
 }
-/* ФИЛЬТРАЦИЯ
-.form-filter {
-  display: block;
-  min-height: 150px;
-  border: 1px solid gold;
-}
-.range-controls {
-  position: relative;
-  height: 41px;
-  margin-bottom: 15px;
-  padding-top: 39px;
-  padding-right: 20px;
-  padding-left: 20px;
 
-  background-color: #f1f1f1;
-
-  border-radius: 5px;
-}
-
-.range-controls .scale {
-  height: 2px;
-
-  background: red;
-}
-.range-controls .bar {
-  width: 70%;
-  height: 2px;
-
-  background: #00ca74;
-}
-.range-controls .toggle {
-  position: absolute;
-  top: 31px;
-  left: 0;
-  width: 4px;
-  height: 4px;
-  padding: 0;
-
-  border: 8px solid #ffffff;
-  background-color: #ababab;
-  box-shadow: 0 2px 1px 0 #cfcfcf;
-  border-radius: 50%;
-  cursor: pointer;
-}
-.range-controls .toggle-min {
-  left: 18px;
-}
-
-.range-controls .toggle-max {
-  left: 160px;
-}
-
-.price-controls {
-  font-size: 0;
-}
-
-.price-controls label {
-  display: inline-block;
-  width: 50%;
-
-  font-size: 16px;
-  text-transform: uppercase;
-}
-
-.price-controls input {
-  width: 60px;
-  padding: 8px 10px;
-  margin-left: 10px;
-
-  font-family: Roboto, Arial, sans-serif;
-  font-size: 16px;
-  text-align: center;
-  color: #283136;
-
-  border: none;
-  border-radius: 5px;
-  background: #f1f1f1;
-}
-
-.max-price {
-  text-align: right;
-}
-*/
 /* ФИЛЬТРАЦИЯ */
 .form-filter {
-  display: flex;
+  display: none;
 
 }
-.fat-list,
-.additive-list {
+.filters {
   display: flex;
+  flex-wrap: wrap;
 }
-.fat-list li,
-.additive-list li {
+.filter-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  margin-right: 14px;
+}
+.filter-control-list {
+  display: flex;
+  min-height: 37px;
+  box-sizing: border-box;
+}
+.filter-control {
   display: flex;
   align-items: center;
-  height: 40px;
-  border: 1px solid rebeccapurple;
-}
-.fat-list input {
-
-  width: 40px;
-}
-.fat-list label {
-
-  line-height: 40px;
-  width: 150px;
-}
-.fat-list p {
-  display: flex;
+  min-height: 37px;
+  box-sizing: border-box;
+  padding-right: 16px;
+  padding-left: 16px;
 
 }
+.filter-control-list,
+.filter-item:first-child .filter-control,
+.filter-item:nth-child(2) .filter-control {
+  background-color: rgba(248, 247, 244, 0.2);
+  border-radius: 16px;
+}
+.button-filter {
+  align-self: flex-end;
+  min-height: 37px;
+  min-width: 144px;
+  box-sizing: border-box;
+  border: 2px solid #ffffff;
+  background-color: rgba(248, 247, 244, 0.2);
+  border-radius: 16px;
+}
+.filter-legend {
+  min-height: 25px;
+  line-height: 25px;
+  font-family: "Roboto-Medium", "Arial", sans-serif;
+  font-size: 14px;
+  color: #ffffff;
+}
+select[id="sort"] {
+  background: transparent;
+  border: none;
+}
+select[id="sort"],
+.filter-desc,
+.button-filter {
+  font-family: "Roboto-Medium", "Arial", sans-serif;
+  font-size: 16px;
+}
+.fat-perc,
+.additive {
+  font-size: 0;
+}
+input[name="fat-radio"],
+input[name="additive-checkbox"] {
+  display: none;
+}
+/* настраиваем кнопки выбора процента жирности товара */
+.fat-perc {
+  /*
+  position: relative;
+  */
+  width: 22px;
+  height: 22px;
+  box-sizing: border-box;
+  background-color: transparent;
+  /*
+  border: 4px solid #ffffff;
+  border-radius: 50%;
+  */
+
+  background-image: url("../img/radio-off-icon.svg");
+  background-size: 22px;
+  background-repeat: no-repeat;
+  border: none;
+
+  cursor: pointer;
+}
+.fat-perc::before {
+  display: none;
+}
+input[name="fat-radio"]:checked + .fat-perc {
+  background-image: url("../img/radio-on-icon.svg");
+  background-size: 22px;
+}
+/* Вторая версия на случай если использовать средствами css отрисовку
+input[name="fat-radio"]:checked + .fat-perc::before {
+  content: "";
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -3px;
+  margin-left: -3px;
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: none;
+  background-color: #ffffff;
+}
+*/
+.fat-perc + .filter-desc {
+  padding-left: 10px;
+}
+/* настраиваем кнопки выбора наполнителя */
+.additive {
+  width: 24px;
+  height: 20px;
+  box-sizing: border-box;
+  background-image: url("../img/checkbox-off-icon.svg");
+  background-repeat: no-repeat;
+  background-size: 20px;
+  border: none;
+  cursor: pointer;
+}
+input[name="additive-checkbox"]:checked + .additive {
+  background-image: url("../img/checkbox-on-icon.svg");
+  background-size: 24px 20px;
+}
+.additive + .filter-desc {
+  padding-left: 8px;
+
+}
+
+/* стилизация цены */
+.price-controls {
+  display: none;
+}
+.filter-item:nth-child(2) .ranges {
+  position: relative;
+
+  width: 100%;
+
+}
+.ranges .scale {
+  position: relative;
+  height: 2px;
+  width: 100%;
+
+  background: rgba(248, 247, 244, 0.5);
+}
+
+.ranges .bar {
+
+  width: 80%;
+  height: 2px;
+
+  background: #ffffff;
+}
+
+.ranges .toggle {
+  position: absolute;
+  top: -9px;
+
+  width: 4px;
+  height: 4px;
+
+  background: #ababab;
+  border: 8px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 2px 1px 0 rgba(0, 1, 1, 0.2);
+  cursor: pointer;
+}
+.ranges .toggle-min {
+  left: 0;
+}
+.ranges .toggle-max {
+  left: 80%;
+}
+.ranges .toggle:hover {
+  background: #1c4f80;
+}
+
+
 /* сортировка по сетке элементов товара */
 /* Список товаров */
 article.ice-creams-list {
@@ -1232,7 +1310,7 @@ article.ice-creams-list {
   flex-wrap: wrap;
   align-items: flex-start;
 
-  justify-content: space-between;
+
   box-sizing: border-box;
   /*
   margin-bottom: 40px;
