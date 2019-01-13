@@ -1,22 +1,22 @@
 @font-face {
-  font-family: 'Roboto';
-  src: url('../fonts/roboto-regular.woff2') format('woff2'),
-       url('../fonts/roboto-regular.woff') format('woff');
+  font-family: 'Roboto-Regular';
+  src: url('../fonts/roboto-regular-webfont.woff2') format('woff2'),
+       url('../fonts/roboto-regular-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Roboto';
-  src: url('../fonts/roboto-bold.woff2') format('woff2'),
-       url('../fonts/roboto-bold.woff') format('woff');
-  font-weight: bold;
+  font-family: 'Roboto-Bold';
+  src: url('../fonts/roboto-bold-webfont.woff2') format('woff2'),
+       url('../fonts/roboto-bold-webfont.woff') format('woff');
+  font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Roboto';
-  src: url('../fonts/roboto-medium.woff2') format('woff2'),
-       url('../fonts/roboto-medium.woff') format('woff');
-  font-weight: 500;
+  font-family: 'Roboto-Medium';
+  src: url('../fonts/roboto-medium-webfont.woff2') format('woff2'),
+       url('../fonts/roboto-medium-webfont.woff') format('woff');
+  font-weight: normal;
   font-style: normal;
 }
 @keyframes bounce {
@@ -24,14 +24,11 @@
   70% { transform: translateY(30px); }
   90% { transform: translateY(-10px); }
   100% { transform: translateY(0); }
-}
+  }
 * {
   margin: 0;
   padding: 0;
 
-  font-family: "Roboto", "Arial", sans-serif;
-  font-weight: normal;
-  font-style: normal;
   color: #ffffff;
   list-style: none;
 }
@@ -42,8 +39,11 @@ body {
   width: 1200px;
   margin: 0% auto;
 
+  font-family: "Roboto-Regular", "Arial", sans-serif;
+  color: #ffffff;
   background-color: #849d8f;
 }
+
 .header,
 .main,
 .footer,
@@ -52,13 +52,16 @@ body {
   margin-left: 27px;
   margin-right: 27px;
 }
+
 a {
   text-decoration: none;
 }
 
-.hidden {
+/* УДАЛИТЬ*/
+.visually-hidden {
   display: none;
 }
+
 /* Стилизация подчеркивания для ссылки */
 .doc-item > a,
 .copyright a,
@@ -95,12 +98,18 @@ main.catalog {
 }
 
 /* КНОПКА ОБЩАЯ*/
-.button,
-.link-button {
-  font-family: "Roboto", "Arial", sans-serif;
-  font-weight: bold;
+.button {
+  font-family: "Roboto-Bold", "Arial", sans-serif;
   color: #fefefe;
   border: none;
+  box-shadow: 0px 2px 2px 0 rgba(172, 16, 0, 0.64);
+  background-image: linear-gradient(to top, #e74a35, #f26843);
+}
+/* Рисуем форму кнопки из ссылки */
+.link-button {
+  font-family: "Roboto-Bold", "Arial", sans-serif;
+  color: #fefefe;
+  text-align: center;
   box-shadow: 0px 2px 2px 0 rgba(172, 16, 0, 0.64);
   background-image: linear-gradient(to top, #e74a35, #f26843);
 }
@@ -110,20 +119,22 @@ main.catalog {
 .basket-form {
   display: none;
 }
-form:not(.form-filter) ,
-.nav-catalog-list {
+form:not(.form-filter){
+  /*
+  display: none;
+  */
   border-radius: 5px;
   background-color: #f8f7f4;
   box-shadow: 0px 20px 20px 0 rgba(0, 0, 0, 0.4);
+
 }
 /* Стилизация общая для input  */
-input,
-textarea {
+input {
   padding-right: 15px;
   padding-left: 15px;
   min-height: 44px;
   box-sizing: border-box;
-
+  font-family: "Roboto-Regular", "Arial", sans-serif;
   font-size: 16px;
   color: #323232;
   background-color: #ffffff;
@@ -133,26 +144,16 @@ textarea {
   border-width: 1px;
   outline-style: none;
 }
-input::placeholder,
-textarea::placeholder {
+input::placeholder {
   color: #999999;
 }
-input:focus,
-textarea:focus {
+input:focus {
   min-height: 44px;
   border: 2px solid rgba(46, 136, 228, 0.52);
 }
-input:hover:not(:focus),
-textarea:hover {
+input:hover:not(:focus) {
   box-sizing: border-box;
   border: 2px solid rgba(154, 154, 154, 0.52);
-}
-textarea {
-  padding: 13px 15px;
-  line-height: 24px;
-  white-space: pre;
-  overflow: auto;
-  resize: none;
 }
 
 
@@ -178,12 +179,18 @@ textarea {
 
   display: flex;
   align-items: center;
+
+
+  list-style: none;
 }
 /* Элемент списка */
 .nav-item {
   position: relative;
-
   min-height: 32px;
+  /* Временое закрыл
+  display: flex;
+  align-items: center;
+  */
   padding-left: 13px;
   padding-right: 13px;
 }
@@ -191,15 +198,38 @@ textarea {
 .nav-item > a {
   position: relative;
 
-  font-weight: bold;
-  font-size: 16px;
   line-height: 32px;
+  font-family: "Roboto-Bold", "Arial", sans-serif;
+  font-size: 16px;
 }
 /* Текущая страница */
 .nav-item.current {
   background-color: #d07058;
   border-radius: 16px;
 }
+
+/* ОСТОРОЖНО!!!!!!!
+.nav-item:not(.current) > a::before {
+  position: absolute;
+  left: 13px;
+  bottom: 7px;
+
+  width: calc(100% - 26px);
+
+  content: "";
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+*/
+/* При наведении на элемент навигации */
+/* СТАРАЯ ВЕРСИЯ ОСТОРОЖНО!!!!
+.nav-item:hover > a {
+  color: #333333;
+  border-radius: 16px;
+
+  background-color: #f7f6f3;
+}
+
+*/
 .nav-item:not(.current):hover {
   border-radius: 16px;
   background-color: #f7f6f3;
@@ -217,14 +247,15 @@ textarea {
   position: absolute;
   top: 36px;
   left: -8px;
-  z-index: 4;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
+  list-style: none;
 
   background-color: #f8f7f4;
   border-radius: 5px;
+  z-index: 20;
 }
 /* Элемент подменю */
 .nav-catalog-item {
@@ -247,7 +278,7 @@ textarea {
 }
 .nav-catalog-item > a {
   padding-left: 20px;
-  padding-right: 20px;
+  padding-right: 12px;
 
   font-size: 14px;
   color: #323232;
@@ -268,13 +299,13 @@ textarea {
   border-bottom: 1px solid rgba(50, 50, 50, 0.2);
 }
 .nav-catalog-item:first-child > a {
-  font-weight: bold;
+  font-family: "Roboto-Bold", "Arial", sans-serif;
 }
 .nav-catalog-item:hover {
   background-color: #fbded8;
 }
 /* При наведении нижнюю или верхнюю ссылку в подменю
-  задаем правильные закругления
+  задаем правильные закругления. Или это костыль?
 */
 .nav-catalog-item:first-child:hover {
   border-top-left-radius: 5px;
@@ -291,6 +322,8 @@ textarea {
   justify-content: flex-end;
   align-items: center;
   min-height: 32px;
+
+  list-style: none;
 }
 /* Элемент юзерской части */
 .user-item {
@@ -300,7 +333,7 @@ textarea {
   align-items: center;
 }
 .user-item > span {
-  font-weight: 500;
+  font-family: "Roboto-Medium", "Arial", sans-serif;
   font-size: 14px;
   line-height: 32px;
 
@@ -352,7 +385,6 @@ textarea {
   position: absolute;
   top: 37px;
   right: 0;
-  z-index: 4;
 
   display: flex;
   flex-direction: column;
@@ -391,11 +423,16 @@ textarea {
   padding-left: 25px;
   border-radius: 22px;
 
+  font-family: "Roboto-Bold", "Arial", sans-serif;
   font-size: 18px;
 }
 .reg-item a {
+  font-family: "Roboto-Regular", "Arial", sans-serif;
   font-size: 13px;
   color: #323232;
+  /*
+  border-bottom: 1px solid #323232;
+  */
 }
 /* Рисуем формы для корзины */
 .basket {
@@ -411,6 +448,7 @@ textarea {
   box-sizing: border-box;
 }
 .basket-cell {
+  font-family: "Roboto-Regular", "Arial", sans-serif;
   font-size: 13px;
   color: #323232;
 }
@@ -455,7 +493,7 @@ textarea {
 .basket-form .total
 {
   padding: 17px 0;
-  font-weight: bold;
+  font-family: "Roboto-Bold", "Arial", sans-serif;
   font-size: 15px;
   color: #323232;
 }
@@ -467,9 +505,11 @@ textarea {
   height: 44px;
   padding: 0 14px;
   border-radius: 22px;
+  font-family: "Roboto-Bold", "Arial", sans-serif;
   font-size: 18px;
   color: #fefefe;
 }
+
 /* обработка при наведении на юзерские элементы*/
 .user-item:hover > span {
   color: #323232;
@@ -491,7 +531,7 @@ textarea {
   right: 0px;
 }
 .info-mini > p {
-  font-weight: bold;
+  font-family: "Roboto-Bold", "Arial", sans-serif;
   font-size: 14px;
   text-align: right;
 }
@@ -508,27 +548,33 @@ p.call-number {
 .site-wrapper::before,
 .site-wrapper::after {
   content: "";
+
   visibility: hidden;
 }
+
 .site-wrapper::before {
   background-image: url("../img/slider-item2.png");
 }
+
 .site-wrapper::after {
   background-image: url("../img/slider-item3.png");
 }
 .slider {
   position: relative;
   padding-top: 324px;
-  margin-bottom: 40px;
 
   text-align: center;
+  margin-bottom: 40px;
+}
+body > input[type="radio"] {
+  display: none;
 }
 .slide-title {
   width: 700px;
   margin: 0 auto;
   margin-bottom: 27px;
 
-  font-weight: bold;
+  font-family: "Roboto-Bold", "Arial", sans-serif;
   font-size: 60px;
   line-height: 60px;
 }
@@ -536,7 +582,7 @@ p.call-number {
   display: inline-block;
   padding: 12px 44px;
 
-  font-weight: bold;
+  font-family: "Roboto-Bold", "Arial", sans-serif;
   font-size: 31px;
   line-height: 41px;
   text-align: center;
@@ -546,11 +592,25 @@ p.call-number {
 
   cursor: pointer;
 }
-/* Стили для переключения слайдов*/
+/* Стили для переключения слайдов РЕДАКТИРОВАТЬ*/
+/*
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  clip: rect(0, 0, 0, 0);
+}
+*/
+
 .slider-controls {
   position: absolute;
   bottom: 63px;
   left: 0;
+  /*
+  z-index: 20;
+  */
 
   font-size: 0;
 }
@@ -570,28 +630,20 @@ p.call-number {
 .slider-item {
   display: none;
 }
-
 #product-1:checked ~ .site-wrapper {
-  /*
   background-color: #849d8f;
-  */
   background-image: url("../img/slider-item1.png");
 }
 
 #product-2:checked ~ .site-wrapper {
-  /*
   background-color: #8996a6;
-  */
   background-image: url("../img/slider-item2.png");
 }
 
 #product-3:checked ~ .site-wrapper {
-  /*
   background-color: #9d8b84;
-  */
   background-image: url("../img/slider-item3.png");
 }
-
 
 #product-1:checked ~ .site-wrapper .slide1,
 #product-2:checked ~ .site-wrapper .slide2,
@@ -603,6 +655,9 @@ p.call-number {
 #product-2:checked ~ .site-wrapper label[for="product-2"],
 #product-3:checked ~ .site-wrapper label[for="product-3"] {
   background-color: #ffffff;
+}
+.slider {
+  border: 1px solid red;
 }
 /* оформляем sales*/
 .sales {
@@ -616,15 +671,17 @@ p.call-number {
 .sale-item {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   padding: 20px;
   width: 560px;
   height: 229px;
   box-sizing: border-box;
+
+  border: 1px solid gold;
   border-radius: 15px;
   background-image: url("../img/raspberry-free-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+
 }
 .sale-item:nth-child(2) {
   background-image: url("../img/chocolate-free-bg.jpg");
@@ -633,11 +690,12 @@ p.call-number {
 .sale-item h3,
 .sale-item p {
   display: inline-block;
-  font-weight: bold;
+  font-family: "Roboto-Bold", "Arial", sans-serif;
   font-size: 35px;
   line-height: 41px;
   text-align: left;
   color: #ffffff;
+  border: 1px solid powderblue;
 }
 .sale-item h3 {
   margin-bottom: 20px;
@@ -649,17 +707,20 @@ p.call-number {
 }
 .sale-item .button {
   align-self: flex-end;
-
   box-sizing: border-box;
-  padding: 0 22px;
+  padding: 14px 22px;
+
+
   min-height: 46px;
 
   font-size: 18px;
-  line-height: 46px;
+  line-height: 24px;
   text-align: right;
 
   border-radius: 23px;
+
 }
+
 /* Оформляем main */
 .main {
 }
@@ -673,13 +734,15 @@ p.call-number {
 }
 .features h2 {
   margin-bottom: 10px;
-  font-weight: 500;
+  font-family: "Roboto-Medium", "Arial", sans-serif;
   font-size: 24px;
   color: #323232;
 }
 .feature-list {
   display: flex;
   flex-wrap: wrap;
+  list-style: none;
+  border: 1px solid greenyellow;
 }
 .feature-item {
   position: relative;
@@ -692,8 +755,10 @@ p.call-number {
   padding-right: 10px;
 
 
+  font-family: "Roboto-Regular", "Arial", sans-serif;
   font-size: 16px;
   color: #323232;
+  border: 1px solid red;
 }
 .feature-item::before {
   position: absolute;
@@ -724,6 +789,9 @@ p.call-number {
   margin-bottom: 39px;
 
   box-sizing: border-box;
+  /* Удалить */
+  border: 1px solid yellow;
+  /*              */
 }
 /*  Оформление атикла нью блог*/
 .new-blog {
@@ -737,26 +805,26 @@ p.call-number {
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 10px;
+  /*  Удалить    */
+  border: 1px solid red;
+  /*      */
 }
 h3.new-subject {
   margin-bottom: 13px;
   max-width: 286px;
 
-  font-weight: 500;
+  font-family: "Roboto-Medium", "Arial", sans-serif;
   font-size: 16px;
   text-align: left;
   color: #323232;
 }
 .news {
-  display: inline-block;
   max-width: 286px;
 }
 .news > a {
-  font-weight: bold;
+  font-family: "Roboto-Bold", "Arial", sans-serif;
   font-size: 24px;
-  line-height: 30px;
   color: #323232;
-  border-bottom: 3px solid #323232;
 }
 /*  Оформление секшона рассылка*/
 .subscribe {
@@ -794,24 +862,30 @@ input.email-subscribe {
   border-radius: 5px;
 }
 .subscribe .button {
+  font-size: 18px;
   padding-right: 19px;
   padding-left: 19px;
 
   border-radius: 25px;
-  font-size: 18px;
 }
+
 /*  Оформление карыт адресов*/
 .map-address {
   position: relative;
 }
 
 .map-address > img {
+  /*
+  position: relative;
+  top: 0;
+  left: 0px;
+  */
   position: absolute;
+  display: block;
   top: 0;
   left: 0;
   z-index: 1;
 
-  display: block;
   width: 1200px;
   height: 430px;
 }
@@ -833,6 +907,7 @@ input.email-subscribe {
   background-image: url(../img/pin-icon.svg);
   background-repeat: no-repeat;
 }
+
 .feedback-form {
   position: absolute;
   top: 63px;
@@ -842,19 +917,21 @@ input.email-subscribe {
   width: 302px;
   padding: 32px 25px;
   box-sizing: border-box;
-  z-index: 3;
+  z-index: 5;
 }
 .feedback-form p {
+  font-family: "Roboto-Regular", "Arial", sans-serif;
   font-size: 14px;
   color: #323232;
 }
 .feedback-form span {
-  font-weight: bold;
+  font-family: "Roboto-Bold", "Arial", sans-serif;
   font-size: 18px;
   color: #323232;
 }
 .feedback-form .address-text {
   width: 148px;
+
 }
 .feedback-form .address {
   display: block;
@@ -873,12 +950,14 @@ input.email-subscribe {
   min-height: 44px;
   width: 100%;
   border-radius: 22px;
-  font-weight: bold;
+  font-family: "Roboto-Bold", "Arial", sans-serif;
   font-size: 18px;
   text-align: center;
   line-height: 44px;
   color: #fefefe;
 }
+
+
 /* footer */
 .footer {
   display: flex;
@@ -937,6 +1016,9 @@ input.email-subscribe {
 
   flex-wrap: wrap;
   width: 330px;
+  /*
+  width: 328px;
+  */
   box-sizing: border-box;
 }
 .doc-item {
@@ -957,11 +1039,12 @@ input.email-subscribe {
 
 .doc-item > a {
   position: relative;
+  font-family: "Roboto-Regular", "Arial", sans-serif;
   font-size: 13px;
   line-height: 13px;
 }
 .doc-item:first-child > a {
-  font-weight: bold;
+  font-family: "Roboto-Bold", "Arial", sans-serif;
 }
 .doc-item:first-child > a::after {
   position: absolute;
@@ -1027,10 +1110,15 @@ input.email-subscribe {
 /* заголовок каталога */
 h2.main-title {
   margin-bottom: 30px;
-  font-weight: bold;
+  font-family: "Roboto-Bold";
   font-size: 35px;
 }
+
 /* ФИЛЬТРАЦИЯ */
+.form-filter {
+  display: none;
+
+}
 .filters {
   display: flex;
   flex-wrap: wrap;
@@ -1055,6 +1143,7 @@ h2.main-title {
   box-sizing: border-box;
   padding-right: 16px;
   padding-left: 16px;
+
 }
 .filter-control-list,
 .filter-item:first-child .filter-control,
@@ -1074,7 +1163,7 @@ h2.main-title {
 .filter-legend {
   min-height: 25px;
   line-height: 25px;
-  font-weight: 500;
+  font-family: "Roboto-Medium", "Arial", sans-serif;
   font-size: 14px;
   color: #ffffff;
 }
@@ -1085,7 +1174,7 @@ select[id="sort"] {
 select[id="sort"],
 .filter-desc,
 .button-filter {
-  font-weight: 500;
+  font-family: "Roboto-Medium", "Arial", sans-serif;
   font-size: 16px;
 }
 .fat-perc,
@@ -1098,10 +1187,18 @@ input[name="additive-checkbox"] {
 }
 /* настраиваем кнопки выбора процента жирности товара */
 .fat-perc {
+  /*
+  position: relative;
+  */
   width: 22px;
   height: 22px;
   box-sizing: border-box;
   background-color: transparent;
+  /*
+  border: 4px solid #ffffff;
+  border-radius: 50%;
+  */
+
   background-image: url("../img/radio-off-icon.svg");
   background-size: 22px;
   background-repeat: no-repeat;
@@ -1162,7 +1259,9 @@ input[name="additive-checkbox"]:checked + .additive {
 }
 .filter-item:nth-child(2) .ranges {
   position: relative;
+
   width: 100%;
+
 }
 .ranges .scale {
   position: relative;
@@ -1173,8 +1272,10 @@ input[name="additive-checkbox"]:checked + .additive {
 }
 
 .ranges .bar {
+
   width: 80%;
   height: 2px;
+
   background: #ffffff;
 }
 
@@ -1200,6 +1301,8 @@ input[name="additive-checkbox"]:checked + .additive {
 .ranges .toggle:hover {
   background: #1c4f80;
 }
+
+
 /* сортировка по сетке элементов товара */
 /* Список товаров */
 article.ice-creams-list {
@@ -1207,7 +1310,11 @@ article.ice-creams-list {
   flex-wrap: wrap;
   align-items: flex-start;
 
+
   box-sizing: border-box;
+  /*
+  margin-bottom: 40px;
+  */
 }
 /* Элемент товара */
 article.ice-item {
@@ -1219,6 +1326,7 @@ article.ice-item {
   padding-top: 6px;
   margin-bottom: 40px;
   box-sizing: border-box;
+  border: 1px solid red;
 }
 article.hit::after {
   position: absolute;
@@ -1232,6 +1340,15 @@ article.hit::after {
   background-size: 61px 61px;
   background-color: transparent;
   border-radius: 50%;
+  /*
+  position: relative;
+  background-image: url("../img/hit-icon.svg");
+  background-repeat: no-repeat;
+  background-size: 61px 61px;
+  background-position: 13px 0;
+  z-index: 50;
+  */
+
 }
 article.ice-item > img {
   margin: 0 auto;
@@ -1246,7 +1363,7 @@ article.ice-item > .price {
   top: 214px;
   left: 13px;
 
-  font-weight: bold;
+  font-family: "Roboto-Bold", "Arial", sans-serif;
   font-size: 45px;
   line-height: 34px;
 }
@@ -1269,13 +1386,12 @@ article.ice-item .unit::before {
   background-repeat: no-repeat;
 }
 .desc-ice {
-  z-index: 3;
   width: 267px;
-  font-weight: 500;
+  font-family: "Roboto-Medium", "Arial", sans-serif;
   font-size: 16px;
   line-height: 22px;
   text-align: center;
-
+  z-index: 11;
 }
 .desc-ice a {
 
@@ -1285,7 +1401,6 @@ article.ice-item:hover .container {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 2;
   width: 100%;
   height: 405px;
   min-height: 405px;
@@ -1295,6 +1410,7 @@ article.ice-item:hover .container {
   justify-content: flex-end;
   border-radius: 10px;
   background-color: rgba(248, 247, 244, 0.2);
+  z-index: 10;
 }
 .ice-item .link-button{
   display: none;
@@ -1314,7 +1430,7 @@ article.ice-item:hover .link-button {
 /* Тень меню и форм */
 article.ice-item:hover::before {
   box-shadow: 0px 20px 20px 0 rgba(0, 0, 0, 0.4);
-  z-index: 2;
+  z-index: 10;
 }
 
 /* Нажатие на Каталог */
@@ -1331,69 +1447,6 @@ article.ice-item:hover::before {
   color: #ffffff;
   background-color: #d07058;
 }
-.paginator {
-  display: flex;
-  justify-content: flex-end;
-}
-.paginator a {
-  width: 27px;
-  height: 26px;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 26px;
-  vertical-align: middle;
-  text-align: center;
-  align-self: center;
-  color: #ffffff;
-}
-.paginator .prev,
-.paginator .next {
-  position: relative;
-  font-size: 0;
-}
-.prev::before,
-.next::before {
-  position: absolute;
-  top: 50%;
-  content: "";
-  display: block;
-
-  border: 2px solid rgba(255, 255, 255, 1);
-
-  width: 6px;
-  height: 6px;
-  transform: translateY(-50%) rotate(45deg);
-}
-.disabled.prev::before,
-.disabled.next::before {
-  border-color: rgba(255, 252, 252, 0.2);
-}
-.prev::before {
-  left: 10px;
-  border-right: 0;
-  border-top: 0;
-}
-.next::before {
-  right: 10px;
-  border-left: 0;
-  border-bottom: 0;
-}
-
-.paginator .current {
-  border-radius: 50%;
-  background-color: #ffffff;
-  color: #323232;
-}
-.paginator a:hover:not(.disabled) {
-  border-radius: 50%;
-  background-color: rgba(255, 252, 252, 0.2);
-  color: #ffffff;
-}
-.prev:hover:not(.disabled)::before,
-.next:hover:not(.disabled)::before {
-  border-color: #ffffff;
-}
-
 
 .button:hover,
 .link-button:hover {
@@ -1408,10 +1461,11 @@ article.ice-item:hover::before {
 
 .modal {
   position: fixed;
+
   display: none;
 }
 .modal-show {
-  z-index: 3;
+  z-index: 100;
   display: block;
   animation-name: bounce;
   animation-duration: 0.6s;
@@ -1431,7 +1485,7 @@ article.ice-item:hover::before {
 }
 .feedback-modal-form h2 {
   margin-bottom: 24px;
-  font-weight: 500;
+  font-family: "Roboto-Medium", "Arial", sans-serif;
   font-size: 24px;
   line-height: 28px;
   color: #323232;
@@ -1443,8 +1497,8 @@ article.ice-item:hover::before {
   width: 267px;
 }
 .feedback-modal-form .feedback-textarea {
-  height: 155px;
   width: 100%;
+  height: 155px;
 }
 .feedback-modal-form p:last-child {
   margin-bottom: 25px;
@@ -1452,11 +1506,14 @@ article.ice-item:hover::before {
 .feedback-modal-form .button {
   align-self: flex-end;
   height: 44px;
+  /*
+  padding: 14px 24px;
+  */
   padding-right: 24px;
   padding-left: 24px;
   border-radius: 22px;
 
-  font-weight: bold;
+  font-family: "Roboto-Bold", "Arial", sans-serif;
   font-size: 18px;
   line-height: 24px;
   vertical-align: middle;
@@ -1477,21 +1534,6 @@ article.ice-item:hover::before {
   cursor: pointer;
 }
 
-.back-slider-1 {
-  background-color: #849d8f;
-}
-.back-slider-2 {
-  background-color: #8996a6;
-}
-.back-slider-3 {
-  background-color: #9d8b84;
-}
- /*
-  background-color: #849d8f;
-  */
-    /*
-  background-color: #8996a6;
-  */
-  /*
-  background-color: #9d8b84;
-  */
+
+
+

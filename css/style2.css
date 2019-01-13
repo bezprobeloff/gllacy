@@ -110,15 +110,13 @@ main.catalog {
 .basket-form {
   display: none;
 }
-form:not(.form-filter) ,
-.nav-catalog-list {
+form:not(.form-filter){
   border-radius: 5px;
   background-color: #f8f7f4;
   box-shadow: 0px 20px 20px 0 rgba(0, 0, 0, 0.4);
 }
 /* Стилизация общая для input  */
-input,
-textarea {
+input {
   padding-right: 15px;
   padding-left: 15px;
   min-height: 44px;
@@ -133,26 +131,16 @@ textarea {
   border-width: 1px;
   outline-style: none;
 }
-input::placeholder,
-textarea::placeholder {
+input::placeholder {
   color: #999999;
 }
-input:focus,
-textarea:focus {
+input:focus {
   min-height: 44px;
   border: 2px solid rgba(46, 136, 228, 0.52);
 }
-input:hover:not(:focus),
-textarea:hover {
+input:hover:not(:focus) {
   box-sizing: border-box;
   border: 2px solid rgba(154, 154, 154, 0.52);
-}
-textarea {
-  padding: 13px 15px;
-  line-height: 24px;
-  white-space: pre;
-  overflow: auto;
-  resize: none;
 }
 
 
@@ -247,7 +235,7 @@ textarea {
 }
 .nav-catalog-item > a {
   padding-left: 20px;
-  padding-right: 20px;
+  padding-right: 12px;
 
   font-size: 14px;
   color: #323232;
@@ -616,7 +604,6 @@ p.call-number {
 .sale-item {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   padding: 20px;
   width: 560px;
   height: 229px;
@@ -649,13 +636,12 @@ p.call-number {
 }
 .sale-item .button {
   align-self: flex-end;
-
   box-sizing: border-box;
-  padding: 0 22px;
+  padding: 14px 22px;
   min-height: 46px;
 
   font-size: 18px;
-  line-height: 46px;
+  line-height: 24px;
   text-align: right;
 
   border-radius: 23px;
@@ -748,15 +734,12 @@ h3.new-subject {
   color: #323232;
 }
 .news {
-  display: inline-block;
   max-width: 286px;
 }
 .news > a {
   font-weight: bold;
   font-size: 24px;
-  line-height: 30px;
   color: #323232;
-  border-bottom: 3px solid #323232;
 }
 /*  Оформление секшона рассылка*/
 .subscribe {
@@ -1331,69 +1314,10 @@ article.ice-item:hover::before {
   color: #ffffff;
   background-color: #d07058;
 }
+
 .paginator {
   display: flex;
-  justify-content: flex-end;
 }
-.paginator a {
-  width: 27px;
-  height: 26px;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 26px;
-  vertical-align: middle;
-  text-align: center;
-  align-self: center;
-  color: #ffffff;
-}
-.paginator .prev,
-.paginator .next {
-  position: relative;
-  font-size: 0;
-}
-.prev::before,
-.next::before {
-  position: absolute;
-  top: 50%;
-  content: "";
-  display: block;
-
-  border: 2px solid rgba(255, 255, 255, 1);
-
-  width: 6px;
-  height: 6px;
-  transform: translateY(-50%) rotate(45deg);
-}
-.disabled.prev::before,
-.disabled.next::before {
-  border-color: rgba(255, 252, 252, 0.2);
-}
-.prev::before {
-  left: 10px;
-  border-right: 0;
-  border-top: 0;
-}
-.next::before {
-  right: 10px;
-  border-left: 0;
-  border-bottom: 0;
-}
-
-.paginator .current {
-  border-radius: 50%;
-  background-color: #ffffff;
-  color: #323232;
-}
-.paginator a:hover:not(.disabled) {
-  border-radius: 50%;
-  background-color: rgba(255, 252, 252, 0.2);
-  color: #ffffff;
-}
-.prev:hover:not(.disabled)::before,
-.next:hover:not(.disabled)::before {
-  border-color: #ffffff;
-}
-
 
 .button:hover,
 .link-button:hover {
@@ -1443,8 +1367,8 @@ article.ice-item:hover::before {
   width: 267px;
 }
 .feedback-modal-form .feedback-textarea {
-  height: 155px;
   width: 100%;
+  height: 155px;
 }
 .feedback-modal-form p:last-child {
   margin-bottom: 25px;
