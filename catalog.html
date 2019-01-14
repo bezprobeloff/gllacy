@@ -8,73 +8,78 @@
 <body>
 <header class="header">
   <a href="index.html" class="header-logo">
-    <img src="img/logo.svg" alt="Логотип Глейси">
+    <img src="img/logo.svg" width="154" height="64" alt="Логотип Глейси">
   </a>
   <nav class="main-nav">
     <ul class="nav-list">
-      <li class="nav-item current"><a href="catalog.html">Каталог</a>
-          <ul class="nav-catalog-list">
-            <li class="nav-catalog-item"><a href="#">Новинки</a></li>
-            <li class="nav-catalog-item"><a href="#">Сливочное</a></li>
-            <li class="nav-catalog-item"><a href="#">Щербеты</a></li>
-            <li class="nav-catalog-item"><a href="#">Фруктовый лед</a></li>
-            <li class="nav-catalog-item"><a href="#">Мелорин</a></li>
-          </ul>
+      <li class="nav-item current"><a href="#">Каталог</a>
+        <ul class="nav-catalog-list">
+          <li class="nav-catalog-item"><a href="#">Новинки</a></li>
+          <li class="nav-catalog-item current"><a href="#">Сливочное</a></li>
+          <li class="nav-catalog-item"><a href="#">Щербеты</a></li>
+          <li class="nav-catalog-item"><a href="#">Фруктовый лед</a></li>
+          <li class="nav-catalog-item"><a href="#">Мелорин</a></li>
+        </ul>
       </li>
       <li class="nav-item"><a href="#">Доставка и оплата</a></li>
       <li class="nav-item"><a href="#">О Компании</a></li>
     </ul>
   </nav>
   <ul class="user-block-list">
-      <li class="user-item"><span></span>
-        <form class="search-form" action="https://echo.htmlacademy.ru" method="post">
-          <p>
-            <label class="hidden" for="search-text">Поиск</label>
-            <input type="search" name="search-text" id="" placeholder="Что ищем?">
-          </p>
-        </form>
-      </li>
-      <li class="user-item"><span>Вход</span>
-        <form class="user-login" action="https://echo.htmlacademy.ru" method="post">
-          <p>
-            <label class="hidden" for="user-login">Логин</label>
-            <input type="email" name="login" id="user-login" placeholder="Электронная почта" autofocus>
-          </p>
-          <p>
-            <label class="hidden" for="password">Пароль</label>
-            <input type="password" name="password" id="password" placeholder="Пароль">
-          </p>
-          <div class="container-reg">
-            <button class="button" type="submit">Войти</button>
+  <li class="user-item"><span></span>
+    <form class="search-form" action="https://echo.htmlacademy.ru" method="post">
+      <p>
+        <label class="hidden" for="search-text">Поиск</label>
+          <input type="search" name="search-text" id="search-text" placeholder="Что ищем?" autofocus>
+      </p>
+    </form>
+  </li>
+  <li class="user-item"><span>Вход</span>
+    <form class="user-login" action="https://echo.htmlacademy.ru" method="post">
+      <label class="hidden" for="user-login">Логин</label>
+        <input type="email" name="login" id="user-login" placeholder="Электронная почта" autofocus required>
+        <label class="hidden" for="password">Пароль</label>
+        <input type="password" name="password" id="password" placeholder="Пароль" required>
+        <div class="container-reg">
+          <button class="button" type="submit">Войти</button>
             <ul class="reg-list">
               <li class="reg-item"><a href="#">Забыли пароль?</a></li>
               <li class="reg-item"><a href="#">Новая регистрация</a></li>
             </ul>
-          </div>
-        </form>
-      </li>
-      <li class="user-item"><span>Пусто</span>
-        <form class="basket-form" action="https://echo.htmlacademy.ru" method="get">
-          <div class="basket">
-            <ul class="basket-row">
-              <li class="basket-cell">
-                <button class="button" type="button"></button>
-              </li>
-              <li class="basket-cell"><img src="img/ice-orange-img.jpg" alt="Превью товара"></li>
-              <li class="basket-cell">Пломбир с апельсиновым джемом</li>
-              <li class="basket-cell">1,5 кг х <span>200 руб.</span></li>
-              <li class="basket-cell">300 руб.</li>
-            </ul>
-          </div>
-          <p>Итого:<span class="total">750 руб.</span></p>
-          <button class="button" type="submit">Оформить заказ</button>
-        </form>
-        </li>
-  </ul>
-  <section class="info-mini">
-    <p class="work-time">С 10 до 20, ежедневно</p>
-    <p  class="call-number">8 812 450-25-25</p >
-  </section>
+        </div>
+    </form>
+  </li>
+  <li class="user-item"><span>Пусто</span>
+    <form class="basket-form" action="https://echo.htmlacademy.ru" method="get">
+      <div class="basket">
+        <ul class="basket-row">
+          <li class="basket-cell">
+            <button class="button-close" type="button"></button>
+          </li>
+          <li class="basket-cell"><img src="img/ice-orange-small.jpg" width="33" height="33" alt="Превью товара"></li>
+          <li class="basket-cell">Пломбир с апельсиновым джемом</li>
+          <li class="basket-cell">1,5 кг х <span>200 руб.</span></li>
+          <li class="basket-cell">300 руб.</li>
+        </ul>
+        <ul class="basket-row">
+          <li class="basket-cell">
+            <button class="button-close" type="button"></button>
+          </li>
+          <li class="basket-cell"><img src="img/ice-strawberry-small.jpg" width="33" height="33" alt="Превью товара"></li>
+          <li class="basket-cell">Клубничный пломбир с присыпкой из белого шоколада</li>
+          <li class="basket-cell">1,5 кг х <span>300 руб.</span></li>
+          <li class="basket-cell">450 руб.</li>
+        </ul>
+      </div>
+        <p>Итого: <span class="total">750 руб.</span></p>
+        <button class="button" type="submit">Оформить заказ</button>
+    </form>
+  </li>
+</ul>
+<section class="info-mini">
+  <p class="work-time">С 10 до 20, ежедневно</p>
+  <p  class="call-number">8 812 450-25-25</p >
+</section>
 </header>
 <main class="main catalog">
   <nav class="breadcrumbs">
@@ -87,7 +92,7 @@
   <h1 class="hidden">Интернет-магазин продажи мороженого "Глейси"</h1>
   <h2 class="main-title">Сливочное мороженое</h2>
   <section class="filters">
-    <div class="filter-item">
+    <div class="filter-item sort-filter">
       <span class="filter-legend">Сортировка:</span>
       <div class="filter-control">
         <label class="hidden" for="sort">Сортировка:</label>
@@ -97,10 +102,10 @@
         </select>
       </div>
     </div>
-    <div class="filter-item">
+    <div class="filter-item price-filter">
       <div class="price-controls">
-        <label class="min-price-label"><input name="min-price" type="text" value="0"></label>
-        <label class="max-price-label"><input name="max-price" type="text" value="15000"></label>
+        <label class="min-price-label"><input name="min-price-val" type="text" value="0"></label>
+        <label class="max-price-label"><input name="max-price-val" type="text" value="15000"></label>
       </div>
       <span class="filter-legend">Цена: <span class="min-price">100</span> руб. – <span class="max-price">500</span> руб.</span>
       <div class="filter-control ranges">
