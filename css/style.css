@@ -1324,8 +1324,8 @@ input[name="additive-checkbox"]:checked + .additive {
 }
 /* стилизация при наведении-нажати радиоточек и чексбоксов
 в фильтрации THIS*/
-input[name="additive-checkbox"]:not(input[disabled]):hover + .additive,
-input[name="fat-radio"]:not(input[disabled]):hover + .fat-perc {
+input[name="additive-checkbox"]:not([disabled]):hover + .additive,
+input[name="fat-radio"]:not([disabled]):hover + .fat-perc {
   opacity: 1;
 }
 input[disabled] + .additive,
