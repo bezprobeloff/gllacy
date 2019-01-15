@@ -1043,7 +1043,11 @@ input.email-subscribe {
 /* Вставляем символ » */
 .breadcrumb-item:not(:last-child)::after {
   position: absolute;
+  /*
   top: -5px;
+  */
+  top: -50%;
+  margin-top: 5px;
   right: -14px;
   content: "»";
   width: auto;
@@ -1059,6 +1063,7 @@ h2.main-title {
 .filters {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 25px;
 }
 .filter-item {
   display: flex;
@@ -1067,6 +1072,10 @@ h2.main-title {
   align-items: flex-start;
   align-content: flex-start;
   margin-right: 14px;
+}
+.filter-item,
+.button-filter {
+  margin-bottom: 15px;
 }
 .filter-control-list {
   display: flex;
@@ -1091,10 +1100,24 @@ h2.main-title {
   align-self: flex-end;
   min-height: 37px;
   min-width: 144px;
+  font-weight: 500;
   box-sizing: border-box;
   border: 2px solid #ffffff;
   background-color: rgba(248, 247, 244, 0.2);
   border-radius: 16px;
+  outline-style: none;
+  cursor: pointer;
+}
+.button-filter:hover {
+  color: #323232;
+  border-style: none;
+  background-color: #ffffff;
+}
+.button-filter:active {
+  color: #323232;
+  border-style: none;
+  box-shadow: inset 0px 2px 1px 0 #696969;
+  background-color: #ededed;
 }
 .filter-legend {
   padding-left: 16px;
@@ -1146,7 +1169,7 @@ h2.main-title {
 .sort-filter .filter-control:hover::before {
   background-image: url("../img/down-dir-black-icon.svg");
 }
-.sort-filter select[id="sort"]:hover {
+.filter-control:hover select[id="sort"] {
   color: #323232;
 }
 
@@ -1159,6 +1182,7 @@ select[id="sort"],
 .fat-perc,
 .additive {
   font-size: 0;
+  opacity: 0.8;
 }
 input[name="fat-radio"],
 input[name="additive-checkbox"] {
@@ -1269,8 +1293,25 @@ input[name="additive-checkbox"]:checked + .additive {
   left: 80%;
 }
 .ranges .toggle:hover {
-  background: #1c4f80;
+  top: -10px;
+  margin-left: -2px;
+  border: 9px solid #ffffff;
+  width: 5px;
+  height: 5px;
+
+  cursor: pointer;
 }
+/* стилизация при наведении-нажати радиоточек и чексбоксов
+в фильтрации THIS*/
+input[name="additive-checkbox"]:not(input[disabled]):hover + .additive,
+input[name="fat-radio"]:not(input[disabled]):hover + .fat-perc {
+  opacity: 1;
+}
+input[disabled] + .additive,
+input[disabled] + .fat-perc {
+  opacity: 0.4;
+}
+
 /* сортировка по сетке элементов товара */
 /* Список товаров */
 article.ice-creams-list {
@@ -1405,6 +1446,7 @@ article.ice-item:hover::before {
 .paginator {
   display: flex;
   justify-content: flex-end;
+  margin-bottom: 30px;
 }
 .paginator a {
   width: 27px;
