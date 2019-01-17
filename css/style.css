@@ -266,12 +266,18 @@ textarea {
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: flex-start;
+      -ms-flex-align: flex-start;
+          align-items: flex-start;
   padding-top: 9px;
-  margin-bottom: 28px;
+  margin-bottom: 25px;
+  min-height: 64px;
 }
+.main-nav,
+.user-block-list {
+  margin-top: 12px;
+}
+
 /* header logo */
 .header-logo {
   width: 154px;
@@ -298,6 +304,7 @@ textarea {
   min-height: 32px;
   padding-left: 13px;
   padding-right: 13px;
+  margin-right: 2px;
 }
 /* Оформление заголовка элемента навигации */
 .nav-item > a {
@@ -305,7 +312,9 @@ textarea {
 
   font-weight: bold;
   font-size: 16px;
+
   line-height: 32px;
+
 }
 
 /* Прячем по умолчанию подменю навигации */
@@ -463,7 +472,7 @@ textarea {
   width: 33px;
   height: 33px;
   padding: 0;
-
+  font-size: 0;
   border-radius: 50%;
 }
 /* добавляем иконки */
@@ -675,16 +684,21 @@ textarea {
 /* оформляем контакты под навигацией */
 .info-mini {
   position: absolute;
-  top: 69px;
+  top: 72px;
   right: 0px;
 }
 .info-mini > p {
   font-weight: bold;
   font-size: 14px;
+  line-height: 16px;
   text-align: right;
+}
+.info-mini .work-time {
+  margin-bottom: 5px;
 }
 p.call-number {
   font-size: 22px;
+  line-height: 1.09;
 }
 /* Оформляем слайдер */
 .site-wrapper {
@@ -708,15 +722,15 @@ p.call-number {
 }
 .slider {
   position: relative;
-  padding-top: 324px;
-  margin-bottom: 40px;
+  padding-top: 291px;
+  margin-bottom: 41px;
 
   text-align: center;
 }
 .slide-title {
   width: 700px;
   margin: 0 auto;
-  margin-bottom: 27px;
+  margin-bottom: 32px;
 
   font-weight: bold;
   font-size: 60px;
@@ -724,13 +738,18 @@ p.call-number {
 }
 .slider .button {
   display: inline-block;
-  padding: 12px 44px;
+  padding-top: 8px;
+  padding-bottom: 12px;
+  padding-right: 40px;
+  padding-left: 40px;
+
 
   font-weight: bold;
-  font-size: 31px;
-  line-height: 41px;
+  font-size: 32px;
+  line-height: 44px;
   text-align: center;
   color: #ffffff;
+  text-shadow: 0px 2px 5px rgba(160, 32, 11, 0.76);
   vertical-align: top;
   border-radius: 50px;
 
@@ -739,7 +758,7 @@ p.call-number {
 /* Стили для переключения слайдов*/
 .slider-controls {
   position: absolute;
-  bottom: 63px;
+  bottom: 21px;
   left: 0;
 
   font-size: 0;
@@ -810,10 +829,16 @@ p.call-number {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 20px;
+
+  -webkit-box-pack: flex-start;
+      -ms-flex-pack: flex-start;
+          justify-content: flex-start;
+
+  padding-top: 15px;
+  padding-bottom: 10px;
+  padding-right: 22px;
+  padding-left: 18px;
+  box-sizing: border-box;
   width: 560px;
   height: 229px;
   -webkit-box-sizing: border-box;
@@ -837,26 +862,39 @@ p.call-number {
   color: #ffffff;
 }
 .sale-item h3 {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 .sale-item p {
   font-size: 18px;
   line-height: 22px;
-  min-height: 85px;
+  min-height: 88px;
 }
 .sale-item .button {
+  position: relative;
+  bottom: 0;
+  right: 0;
   -ms-flex-item-align: end;
       align-self: flex-end;
+      justify-self: flex-end;
 
   -webkit-box-sizing: border-box;
 
           box-sizing: border-box;
-  padding: 0 22px;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 22px;
+  padding-left: 22px;
+
   min-height: 46px;
 
   font-size: 18px;
+  /*
   line-height: 46px;
+  */
+  line-height: 24px;
   text-align: right;
+  vertical-align: middle;
 
   border-radius: 23px;
 }
@@ -1271,6 +1309,7 @@ input.email-subscribe {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+          margin-bottom: 3px;
 }
 .breadcrumb-list {
   display: -webkit-box;
@@ -1290,6 +1329,7 @@ input.email-subscribe {
       -ms-flex-align: center;
           align-items: center;
   margin-right: 20px;
+  margin-left: 1px;
   min-height: 14px;
 }
 .breadcrumb-item > a {
@@ -1313,7 +1353,7 @@ input.email-subscribe {
 
 /* заголовок каталога */
 h2.main-title {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   font-weight: bold;
   font-size: 35px;
 }
@@ -1346,13 +1386,18 @@ h2.main-title {
 }
 .filter-item,
 .button-filter {
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 .filter-control-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  min-height: 37px;
+  /*
+  justify-content: space-between;
+  */
+  padding-right: 16px;
+  padding-left: 16px;
+  min-height: 35px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -1363,11 +1408,18 @@ h2.main-title {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  /*
   min-height: 37px;
+  */
+  height: 35px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding-right: 16px;
   padding-left: 16px;
+}
+.filter-control-list .filter-control:not(:last-child) {
+  padding-right: 18px;
+  padding-left: 0;
 }
 .filter-control-list,
 .filter-item:first-child .filter-control,
@@ -1375,6 +1427,7 @@ h2.main-title {
   background-color: rgba(248, 247, 244, 0.2);
   border-radius: 16px;
 }
+
 .button-filter {
   -ms-flex-item-align: end;
       align-self: flex-end;
@@ -1403,6 +1456,7 @@ h2.main-title {
 }
 .filter-legend {
   padding-left: 16px;
+  padding-bottom: 2px;
   min-height: 25px;
   line-height: 25px;
   font-weight: 500;
@@ -1512,7 +1566,7 @@ input[name="fat-radio"]:checked + .fat-perc::before {
 }
 */
 .fat-perc + .filter-desc {
-  padding-left: 10px;
+  padding-left: 8px;
 }
 /* настраиваем кнопки выбора наполнителя */
 .additive {
@@ -1611,6 +1665,7 @@ article.ice-creams-list {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  justify-content: space-between;
 
   -webkit-box-sizing: border-box;
 
@@ -1629,9 +1684,13 @@ article.ice-item {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  /*
   -ms-flex-preferred-size: 25%;
       flex-basis: 25%;
-  padding-top: 6px;
+  */
+  width: 267px;
+      align-items: center;
+  padding-top: 4px;
   margin-bottom: 40px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -1659,8 +1718,8 @@ article.ice-item > img {
 }
 article.ice-item > .price {
   position: absolute;
-  top: 214px;
-  left: 13px;
+  top: 218px;
+  left: 0;
 
   font-weight: bold;
   font-size: 45px;
@@ -1668,21 +1727,22 @@ article.ice-item > .price {
 }
 article.ice-item .unit {
   position: relative;
-  padding-left: 37px;
+  padding-left: 35px;
 
   font-size: 30px;
 }
 article.ice-item .unit::before {
   position: absolute;
-  left: 7px;
+  left: 2px;
   top: 0px;
 
-  height: 34px;
+  height: 36px;
   width: 30px;
 
   content: "";
   background-image: url("../img/ruble.svg");
   background-repeat: no-repeat;
+  background-size: 30px 36px;
 }
 .desc-ice {
   z-index: 3;
