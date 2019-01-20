@@ -961,6 +961,7 @@ p.call-number {
   padding-left: 18px;
   border-radius: 15px;
   background-image: url('../img/raspberry-free-bg.jpg');
+  background-color: brown;
   background-repeat: no-repeat;
   background-size: cover;
   -webkit-box-orient: vertical;
@@ -981,6 +982,7 @@ p.call-number {
   font-weight: bold;
   line-height: 41px;
   display: inline-block;
+  vertical-align: middle;
   text-align: left;
   color: #fff;
 }
