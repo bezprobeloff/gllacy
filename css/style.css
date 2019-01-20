@@ -789,8 +789,8 @@ textarea {
   background-image: url('../img/entrance-black-icon.svg');
 }
 
-.user-item:last-child:hover > span::before {
-  background-image: url('../img/basket-red-icon.svg');
+.user-item:last-child:not(.cart-filled):hover > span::before {
+  background-image: url('../img/basket-black-icon.svg');
 }
 
 /* оформляем контакты под навигацией */
