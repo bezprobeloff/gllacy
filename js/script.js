@@ -10,7 +10,6 @@ try {
 } catch (err) {
   isStorageSupport = false;
 }
-
 user_item_login.addEventListener("mouseover", function (evt) {
   if (storage) {
     login.value = storage;
@@ -26,7 +25,6 @@ login_form.addEventListener("submit", function (evt) {
   if (!login.value || !password.value) {
     evt.preventDefault();
     login_form.classList.remove("modal-error");
-    login_form.offsetWidth = login_form.offsetWidth;
     login_form.classList.add("modal-error");
     console.log("Нужно ввести логин и пароль");
   } else {
