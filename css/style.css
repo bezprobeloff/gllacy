@@ -714,9 +714,11 @@ textarea {
   width: 11px;
   height: 11px;
   border-style: none;
+  outline-style: none;
   background-color: transparent;
   background-image: url('../img/cross-small-icon.svg');
   background-repeat: no-repeat;
+  cursor: pointer;
 }
 
 .basket-cell:nth-child(2) img {
@@ -789,8 +791,11 @@ textarea {
   background-image: url('../img/entrance-black-icon.svg');
 }
 
-.user-item:last-child:not(.cart-filled):hover > span::before {
+.user-item:last-child:hover > span::before {
   background-image: url('../img/basket-black-icon.svg');
+}
+.user-item.cart-filled:hover > span::before {
+  background-image: url('../img/basket-red-icon.svg');
 }
 
 /* оформляем контакты под навигацией */
@@ -1809,7 +1814,7 @@ input[name='additive-checkbox']:checked+.additive {
 
 input[name='min-price'],
 input[name='max-price'] {
-  width: 24px;
+  width: 25px;
   border: none;
   outline-style: none;
   background-color: transparent;
