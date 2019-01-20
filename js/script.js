@@ -26,7 +26,6 @@ login_form.addEventListener("submit", function (evt) {
     evt.preventDefault();
     login_form.classList.remove("modal-error");
     login_form.classList.add("modal-error");
-    console.log("Нужно ввести логин и пароль");
   } else {
     if (isStorageSupport) {
       localStorage.setItem("login", login.value);
