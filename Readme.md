@@ -6,9 +6,9 @@
 
 Ссылка на deploy проекта в gh-pages: **[Gllacy](https://bezprobeloff.github.io/gllacy/index.html)**
 
-
-![Watch the video](./readme/preview.gif)
-
+<p align="center">
+<img src="https://user-images.githubusercontent.com/44836223/196695792-8ae77846-8e9a-4a14-9684-e7c1735ea795.png" width="300px" title="Gllacy"/>
+</p>
 
 **Обзор**
 
